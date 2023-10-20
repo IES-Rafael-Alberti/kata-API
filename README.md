@@ -86,6 +86,8 @@ Ir más lejos
 
 ## Colaboradores (idiomas en orden alfabético)
 
+[Java](https://github.com/Patcire/kata-API/tree/Patcire/java)  → [Patcire-url](https://github.com/Patcire)
+
 [Laravel](https://github.com/SaphireVert/Kata-API/tree/saphirevert/laravel) → [![saphirevert-repos][saphirevert-shield]][saphirevert-url]
 
 
