@@ -5,28 +5,28 @@
 
 
 # Kata API
-Kata : crear una [API](https://github.com/OAI/OpenAPI-Specification)
+- Kata : crear una [API](https://github.com/OAI/OpenAPI-Specification)
 funcional [CRUD](https://www.codecademy.com/articles/what-is-crud) sobre
 varias tablas en MySQL.
 
 ## Objetivo
-Creación y utilización de una API y aprender y usar diferentes [métodos
+- Creación y utilización de una API y aprender y usar diferentes [métodos
 HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Methods).
 Además de trabajar con Docker en un proyecto.
 
 ## Prerrequisitos
-En la Kata se asume familiaridad con las siguientes tecnologías
+- En la Kata se asume familiaridad con las siguientes tecnologías
 [Git](https://git-scm.com/), [Docker](https://www.docker.com/) y
 [Docker-compose](https://docs.docker.com/compose/).
 
 ## Procedimiento
-[Hacer un fork](https://github.com/epfl-dojo/kata-api/#fork-destination-box) del repositorio,
+- [Hacer un fork](https://github.com/epfl-dojo/kata-api/#fork-destination-box) del repositorio,
 crear una rama (`git checkout -b username/langage` por ejemplo `git checkout
 -b nicolasreymond/php`, desde vuestro fork). Haced un pull request para añadirlo a este 
 repo y añadiéndoos al final de este fichero como autores. 
 
 ## Puesta en marcha
-En cada cambio de un fichero en el contenedor tenemos que hacer:
+- En cada cambio de un fichero en el contenedor tenemos que hacer:
 ```bash
 docker-compose up --build
 ```
