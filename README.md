@@ -3,7 +3,6 @@
 > Pero ahora mismo no es nuestro objetivo.
 > Los objetivos son los que aparecen tras ### Objetivos del módulo
 
-
 # Kata API
 Kata : crear una [API](https://github.com/OAI/OpenAPI-Specification)
 funcional [CRUD](https://www.codecademy.com/articles/what-is-crud) sobre
