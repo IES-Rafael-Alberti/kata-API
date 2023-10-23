@@ -1,3 +1,3 @@
-public interface BeerRepository extends JpaRepository<Beer, Long> {
+/*public interface BeerRepository extends JpaRepository<Beer, Long> {
 
-}
+}*/

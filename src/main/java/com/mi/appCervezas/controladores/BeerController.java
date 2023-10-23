@@ -1,4 +1,4 @@
-@RestController
+/*@RestController
 @RequestMapping("/beers")
 public class BeerController {
 
@@ -33,4 +33,4 @@ public class BeerController {
         Beer updatedBeer = beerService.updateBeer(id, beer);
         return ResponseEntity.ok(updatedBeer);
     }
-}
+}*/

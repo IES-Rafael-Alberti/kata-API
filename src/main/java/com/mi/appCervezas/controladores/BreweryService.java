@@ -1,3 +1,9 @@
+package com.mi.appCervezas.controladores;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+/*
 @Service
 public class BreweryService {
 
@@ -33,3 +39,4 @@ public class BreweryService {
         }
     }
 }
+*/

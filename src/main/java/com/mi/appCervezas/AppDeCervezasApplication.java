@@ -1,0 +1,13 @@
+package com.mi.appCervezas;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class AppDeCervezasApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(AppDeCervezasApplication.class, args);
+    }
+
+}

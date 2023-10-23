@@ -1,3 +1,11 @@
+/*import com.mi.appCervezas.controladores.StyleRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.swing.text.Style;
+import java.util.List;*/
+
+/*
 @Service
 public class StyleService {
 
@@ -30,3 +38,4 @@ public class StyleService {
         return null;
     }
 }
+*/

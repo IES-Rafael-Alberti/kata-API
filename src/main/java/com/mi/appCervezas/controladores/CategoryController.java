@@ -1,6 +1,6 @@
-@RestController
-@RequestMapping("/categories")
-public class CategoryController {
+/*@RestController
+@RequestMapping("/categories")*/
+/*public class CategoryController {
 
     @Autowired
     private CategoryService categoryService;
@@ -37,4 +37,4 @@ public class CategoryController {
             return ResponseEntity.notFound().build();
         }
     }
-}
+}*/
