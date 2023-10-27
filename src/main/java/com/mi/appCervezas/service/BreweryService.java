@@ -1,7 +1,4 @@
-package com.mi.appCervezas.controladores;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+package com.mi.appCervezas.service;
 
 /*
 @Service
