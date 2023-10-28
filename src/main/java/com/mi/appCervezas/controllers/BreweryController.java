@@ -1,4 +1,13 @@
-/*
+package com.mi.appCervezas.controllers;
+
+import com.mi.appCervezas.models.Brewery;
+import com.mi.appCervezas.services.BreweryService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 @RestController
 @RequestMapping("/breweries")
 public class BreweryController {
@@ -35,4 +44,4 @@ public class BreweryController {
         return ResponseEntity.ok(updatedBrewery);
     }
 }
-*/
+

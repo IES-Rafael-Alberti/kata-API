@@ -1,6 +1,13 @@
-package com.mi.appCervezas.service;
+package com.mi.appCervezas.services;
 
-/*@Service
+import com.mi.appCervezas.models.Beer;
+import com.mi.appCervezas.repositories.BeerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
 public class BeerService {
 
     @Autowired
@@ -11,7 +18,7 @@ public class BeerService {
     }
 
     public Beer getBeerById(Long id) {
-        return beerRepository.findById(id).orElse(null);
+        return (Beer) beerRepository.findById(id).orElse(null);
     }
 
     public Beer addBeer(Beer beer) {
@@ -22,8 +29,8 @@ public class BeerService {
         beerRepository.deleteById(id);
     }
 
-    public Beer updateBeer(Long id, Beer newBeer) {
-        Beer existingBeer = beerRepository.findById(id).orElse(null);
+    /*public Beer updateBeer(Long id, Beer newBeer) {
+        Beer existingBeer = (Beer) beerRepository.findById(id).orElse(null);
         if (existingBeer != null) {
             existingBeer.setName(newBeer.getName());
             existingBeer.setCategory(newBeer.getCategory());
@@ -31,5 +38,5 @@ public class BeerService {
             return beerRepository.save(existingBeer);
         }
         return null;
-    }
-}*/
+    }*/
+}
