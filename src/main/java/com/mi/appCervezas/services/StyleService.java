@@ -30,14 +30,13 @@ public class StyleService {
         return styleRepository.findAll();
     }
 
-    /*public Style updateStyle(Long id, Style newStyle) {
-        Style existingStyle = (Style) styleRepository.findById(id).orElse(null);
+    public Style updateStyle(Long id, Style newStyle) {
+        Style existingStyle = styleRepository.findById(id).orElse(null);
         if (existingStyle != null) {
             existingStyle.setStyleName(newStyle.getStyleName());
-            // ... (actualizar otros campos según sea necesario)
             return styleRepository.save(existingStyle);
         }
         return null;
-    }*/
+    }
 }
 

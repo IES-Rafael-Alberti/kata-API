@@ -19,7 +19,7 @@ public class BreweryService {
     }
 
     public Brewery getBreweryById(Long id) {
-        return (Brewery) breweryRepository.findById(id).orElse(null);
+        return breweryRepository.findById(id).orElse(null);
     }
 
     public Brewery addBrewery(Brewery brewery) {
@@ -30,13 +30,18 @@ public class BreweryService {
         breweryRepository.deleteById(id);
     }
 
-    /*public Brewery updateBrewery(Long id, Brewery newBrewery) {
-        Optional<Object> optionalBrewery = Optional.of(breweryRepository.findById(id));
+    public Brewery updateBrewery(Long id, Brewery newBrewery) {
+        Optional<Brewery> optionalBrewery = breweryRepository.findById(id);
 
-        Brewery existingBrewery = (Brewery) optionalBrewery.get();
-        existingBrewery.setName(newBrewery.getName());
-        // ... (actualizar otros campos según sea necesario)
-        return breweryRepository.save(existingBrewery);
-    }*/
+        if (optionalBrewery.isPresent()) {
+            Brewery existingBrewery = optionalBrewery.get();
+            existingBrewery.setName(newBrewery.getName());
+            return breweryRepository.save(existingBrewery);
+        } else {
+            // Manejo si no se encuentra la cervecería
+            return null;
+        }
+    }
+
 }
 

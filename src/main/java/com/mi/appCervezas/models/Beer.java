@@ -28,9 +28,53 @@ public class Beer {
     @Column(nullable = false)
     private double alcoholContent;
 
-
-
-
     // Getters y Setters
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Style getStyle() {
+        return style;
+    }
+
+    public void setStyle(Style style) {
+        this.style = style;
+    }
+
+    public Brewery getBrewery() {
+        return brewery;
+    }
+
+    public void setBrewery(Brewery brewery) {
+        this.brewery = brewery;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public double getAlcoholContent() {
+        return alcoholContent;
+    }
+
+    public void setAlcoholContent(double alcoholContent) {
+        this.alcoholContent = alcoholContent;
+    }
 }

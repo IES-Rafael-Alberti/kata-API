@@ -10,17 +10,25 @@ public class Style {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "cat_id", nullable = false)
-    private Long categoryId;
-
-    @Column(name = "style_name", nullable = false)
+    @Column(nullable = false)
     private String styleName;
 
-    @Column(nullable = false)
-    private String last_mod;
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    // Getters y Setters
+    public String getStyleName() {
+        return styleName;
+    }
+
+    public void setStyleName(String styleName) {
+        this.styleName = styleName;
+    }
+
 
 }

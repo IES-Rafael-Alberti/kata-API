@@ -29,14 +29,13 @@ public class BeerService {
         beerRepository.deleteById(id);
     }
 
-    /*public Beer updateBeer(Long id, Beer newBeer) {
-        Beer existingBeer = (Beer) beerRepository.findById(id).orElse(null);
+    public Beer updateBeer(Long id, Beer newBeer) {
+        Beer existingBeer = beerRepository.findById(id).orElse(null);
         if (existingBeer != null) {
             existingBeer.setName(newBeer.getName());
             existingBeer.setCategory(newBeer.getCategory());
-            // ... (actualizar otros campos según sea necesario)
             return beerRepository.save(existingBeer);
         }
         return null;
-    }*/
+    }
 }

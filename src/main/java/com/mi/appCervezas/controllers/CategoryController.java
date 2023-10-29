@@ -16,19 +16,19 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @GetMapping
-    public List<jdk.jfr.Category> getAllCategories() {
+    public List<Category> getAllCategories() {
         return categoryService.getAllCategories();
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Category> getCategoryById(@PathVariable Long id) {
-        Category category = (Category) categoryService.getCategoryById(id);
+        Category category = categoryService.getCategoryById(id);
         return ResponseEntity.ok(category);
     }
 
     @PostMapping
     public ResponseEntity<Category> addCategory(@RequestBody Category category) {
-        Category addedCategory = (Category) categoryService.addCategory((jdk.jfr.Category) category);
+        Category addedCategory = categoryService.addCategory(category);
         return ResponseEntity.ok(addedCategory);
     }
 
@@ -40,7 +40,7 @@ public class CategoryController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Category> updateCategory(@PathVariable Long id, @RequestBody Category newCategory) {
-        Category updatedCategory = (Category) categoryService.updateCategory(id, (jdk.jfr.Category) newCategory);
+        Category updatedCategory = categoryService.updateCategory(id, newCategory);
         if (updatedCategory != null) {
             return ResponseEntity.ok(updatedCategory);
         } else {

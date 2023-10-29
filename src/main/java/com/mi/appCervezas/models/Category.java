@@ -10,14 +10,33 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "cat_name", nullable = false)
-    private String categoryName;
+    @Column(nullable = false)
+    private String name;
 
     @Column(nullable = false)
     private String last_mod;
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    // Getters y Setters
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLast_mod() {
+        return last_mod;
+    }
+
+    public void setLast_mod(String last_mod) {
+        this.last_mod = last_mod;
+    }
 }
