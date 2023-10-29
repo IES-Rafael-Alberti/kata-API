@@ -18,7 +18,7 @@ public class BeerService {
     }
 
     public Beer getBeerById(Long id) {
-        return (Beer) beerRepository.findById(id).orElse(null);
+        return beerRepository.findById(id).orElse(null);
     }
 
     public Beer addBeer(Beer beer) {
