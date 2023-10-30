@@ -2,6 +2,8 @@ package com.mi.appCervezas.models;
 
 import jakarta.persistence.*;
 
+import java.util.Date;
+
 
 @Entity
 @Table(name = "beers")
@@ -11,23 +13,45 @@ public class Beer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "brewery_id", nullable = false)
+    private Brewery brewery;
+
     @Column(nullable = false)
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "cat_id", nullable = false)
+    private Category category;
 
     @ManyToOne
     @JoinColumn(name = "style_id", nullable = false)
     private Style style;
 
-    @ManyToOne
-    @JoinColumn(name = "brewery_id", nullable = false)
-    private Brewery brewery;
+    @Column(nullable = false, columnDefinition = "FLOAT DEFAULT 0")
+    private float abv;
 
-    @ManyToOne
-    @JoinColumn(name = "category_id", nullable = false)
-    private Category category;
+    @Column(nullable = false, columnDefinition = "FLOAT DEFAULT 0")
+    private float ibu;
 
-    @Column(nullable = false)
-    private double alcoholContent;
+    @Column(nullable = false, columnDefinition = "FLOAT DEFAULT 0")
+    private float srm;
+
+    @Column(nullable = false, length = 40, columnDefinition = "INT DEFAULT 0")
+    private int upc;
+
+    @Column(nullable = false, length = 255, columnDefinition = "VARCHAR(255) DEFAULT ''")
+    private String filepath;
+
+    @Column(nullable = false, length = 255)
+    private String descript;
+
+    @Column(nullable = false, length = 11, columnDefinition = "INT DEFAULT 0")
+    private int add_user;
+
+    @Column(nullable = false, columnDefinition = "TIMESTAMP DEFAULT '0000-00-00 00:00:00'")
+    private Date last_mod;
+
 
     // Getters y Setters
 
@@ -71,12 +95,12 @@ public class Beer {
         this.category = category;
     }
 
-    public double getAlcoholContent() {
+    /*public double getAlcoholContent() {
         return alcoholContent;
     }
 
     public void setAlcoholContent(double alcoholContent) {
         this.alcoholContent = alcoholContent;
-    }
+    }*/
 }
 
