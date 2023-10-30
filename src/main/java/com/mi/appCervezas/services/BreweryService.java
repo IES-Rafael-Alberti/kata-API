@@ -2,7 +2,6 @@ package com.mi.appCervezas.services;
 
 import com.mi.appCervezas.models.BreweryModel;
 import com.mi.appCervezas.repositories.BreweryRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,8 +10,11 @@ import java.util.Optional;
 @Service
 public class BreweryService {
 
-    @Autowired
-    private BreweryRepository breweryRepository;
+    private final BreweryRepository breweryRepository;
+
+    public BreweryService(BreweryRepository breweryRepository) {
+        this.breweryRepository = breweryRepository;
+    }
 
     public List<BreweryModel> getAllBreweries() {
         return breweryRepository.findAll();
@@ -42,7 +44,4 @@ public class BreweryService {
             return null;
         }
     }
-
 }
-
-
