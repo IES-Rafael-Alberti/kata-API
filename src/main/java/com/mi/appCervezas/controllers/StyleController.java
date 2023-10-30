@@ -1,4 +1,4 @@
-package com.mi.appCervezas.controllers;
+/*package com.mi.appCervezas.controllers;
 
 import com.mi.appCervezas.models.Style;
 import com.mi.appCervezas.services.StyleService;
@@ -7,8 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.List;*/
 
+/*
 @RestController
 @RequestMapping("/styles")
 public class StyleController {
@@ -50,3 +51,4 @@ public class StyleController {
     }
 }
 
+*/

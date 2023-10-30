@@ -1,6 +1,6 @@
 package com.mi.appCervezas.services;
 
-import com.mi.appCervezas.models.Brewery;
+import com.mi.appCervezas.models.BreweryModel;
 import com.mi.appCervezas.repositories.BreweryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,15 +14,15 @@ public class BreweryService {
     @Autowired
     private BreweryRepository breweryRepository;
 
-    public List<Brewery> getAllBreweries() {
+    public List<BreweryModel> getAllBreweries() {
         return breweryRepository.findAll();
     }
 
-    public Brewery getBreweryById(Long id) {
+    public BreweryModel getBreweryById(Long id) {
         return breweryRepository.findById(id).orElse(null);
     }
 
-    public Brewery addBrewery(Brewery brewery) {
+    public BreweryModel addBrewery(BreweryModel brewery) {
         return breweryRepository.save(brewery);
     }
 
@@ -30,11 +30,11 @@ public class BreweryService {
         breweryRepository.deleteById(id);
     }
 
-    public Brewery updateBrewery(Long id, Brewery newBrewery) {
-        Optional<Brewery> optionalBrewery = breweryRepository.findById(id);
+    public BreweryModel updateBrewery(Long id, BreweryModel newBrewery) {
+        Optional<BreweryModel> optionalBrewery = breweryRepository.findById(id);
 
         if (optionalBrewery.isPresent()) {
-            Brewery existingBrewery = optionalBrewery.get();
+            BreweryModel existingBrewery = optionalBrewery.get();
             existingBrewery.setName(newBrewery.getName());
             return breweryRepository.save(existingBrewery);
         } else {
@@ -44,4 +44,5 @@ public class BreweryService {
     }
 
 }
+
 

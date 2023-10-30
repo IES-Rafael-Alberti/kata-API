@@ -1,12 +1,13 @@
 package com.mi.appCervezas.controllers;
 
-import com.mi.appCervezas.models.Brewery;
+import com.mi.appCervezas.models.BreweryModel;
 import com.mi.appCervezas.services.BreweryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 
 @RestController
 @RequestMapping("/breweries")
@@ -16,19 +17,19 @@ public class BreweryController {
     private BreweryService breweryService;
 
     @GetMapping
-    public List<Brewery> getAllBreweries() {
+    public List<BreweryModel> getAllBreweries() {
         return breweryService.getAllBreweries();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Brewery> getBreweryById(@PathVariable Long id) {
-        Brewery brewery = breweryService.getBreweryById(id);
+    public ResponseEntity<BreweryModel> getBreweryById(@PathVariable Long id) {
+        BreweryModel brewery = breweryService.getBreweryById(id);
         return ResponseEntity.ok(brewery);
     }
 
     @PostMapping
-    public ResponseEntity<Brewery> addBrewery(@RequestBody Brewery brewery) {
-        Brewery newBrewery = breweryService.addBrewery(brewery);
+    public ResponseEntity<BreweryModel> addBrewery(@RequestBody BreweryModel brewery) {
+        BreweryModel newBrewery = breweryService.addBrewery(brewery);
         return ResponseEntity.ok(newBrewery);
     }
 
@@ -39,9 +40,10 @@ public class BreweryController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Brewery> updateBrewery(@PathVariable Long id, @RequestBody Brewery newBrewery) {
-        Brewery updatedBrewery = breweryService.updateBrewery(id, newBrewery);
+    public ResponseEntity<BreweryModel> updateBrewery(@PathVariable Long id, @RequestBody BreweryModel newBrewery) {
+        BreweryModel updatedBrewery = breweryService.updateBrewery(id, newBrewery);
         return ResponseEntity.ok(updatedBrewery);
     }
 }
+
 

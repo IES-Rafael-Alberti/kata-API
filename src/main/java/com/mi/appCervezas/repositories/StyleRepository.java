@@ -1,10 +1,10 @@
-package com.mi.appCervezas.repositories;
+/*package com.mi.appCervezas.repositories;
 
 import com.mi.appCervezas.models.Style;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Repository;*/
 
-@Repository
+/*@Repository
 public interface StyleRepository extends JpaRepository<Style, Long> {
 
-}
+}*/

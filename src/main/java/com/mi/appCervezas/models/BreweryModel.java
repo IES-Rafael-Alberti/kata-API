@@ -2,9 +2,10 @@ package com.mi.appCervezas.models;
 
 import javax.persistence.*;
 
+
 @Entity
-@Table(name = "categories")
-public class Category {
+@Table(name = "breweries")
+public class BreweryModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,7 +15,10 @@ public class Category {
     private String name;
 
     @Column(nullable = false)
-    private String last_mod;
+    private String country;
+
+    @Column(nullable = false)
+    private String address;
 
     public Long getId() {
         return id;
@@ -32,11 +36,22 @@ public class Category {
         this.name = name;
     }
 
-    public String getLast_mod() {
-        return last_mod;
+    public String getCountry() {
+        return country;
     }
 
-    public void setLast_mod(String last_mod) {
-        this.last_mod = last_mod;
+    public void setCountry(String country) {
+        this.country = country;
     }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+
 }
+

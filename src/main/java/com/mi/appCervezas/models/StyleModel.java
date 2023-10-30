@@ -1,7 +1,6 @@
 package com.mi.appCervezas.models;
 
-import javax.persistence.*;
-
+/*
 @Entity
 @Table(name = "styles")
 public class Style {
@@ -32,3 +31,4 @@ public class Style {
 
 
 }
+*/

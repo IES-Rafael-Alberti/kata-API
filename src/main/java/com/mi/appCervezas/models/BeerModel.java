@@ -1,7 +1,6 @@
 package com.mi.appCervezas.models;
 
-import javax.persistence.*;
-
+/*
 @Entity
 @Table(name = "beers")
 public class Beer {
@@ -78,3 +77,4 @@ public class Beer {
         this.alcoholContent = alcoholContent;
     }
 }
+*/

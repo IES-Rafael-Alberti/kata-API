@@ -1,4 +1,4 @@
-package com.mi.appCervezas.services;
+/*package com.mi.appCervezas.services;
 
 import com.mi.appCervezas.models.Category;
 import com.mi.appCervezas.repositories.CategoryRepository;
@@ -6,9 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
+import java.util.Optional;*/
 
-@Service
+//@Service
+/*
 public class CategoryService {
 
     @Autowired
@@ -43,3 +44,4 @@ public class CategoryService {
         }
     }
 }
+*/
