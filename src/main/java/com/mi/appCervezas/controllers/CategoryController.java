@@ -1,4 +1,4 @@
-/*package com.mi.appCervezas.controllers;
+package com.mi.appCervezas.controllers;
 
 import com.mi.appCervezas.models.Category;
 import com.mi.appCervezas.services.CategoryService;
@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;*/
+import java.util.List;
 
-/*
+
 @RestController
 @RequestMapping("/categories")
 public class CategoryController {
@@ -49,4 +49,4 @@ public class CategoryController {
         }
     }
 }
-*/
+

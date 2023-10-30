@@ -1,14 +1,13 @@
-/*package com.mi.appCervezas.services;
+package com.mi.appCervezas.services;
 
 import com.mi.appCervezas.models.Style;
 import com.mi.appCervezas.repositories.StyleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;*/
+import java.util.List;
 
-//@Service
-/*
+@Service
 public class StyleService {
 
     @Autowired
@@ -41,4 +40,4 @@ public class StyleService {
     }
 }
 
-*/
+

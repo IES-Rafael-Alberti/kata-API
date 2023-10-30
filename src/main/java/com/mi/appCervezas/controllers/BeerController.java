@@ -1,4 +1,4 @@
-/*package com.mi.appCervezas.controllers;
+package com.mi.appCervezas.controllers;
 
 import com.mi.appCervezas.models.Beer;
 import com.mi.appCervezas.services.BeerService;
@@ -7,9 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;*/
+import java.util.List;
 
-/*
+
 @RestController
 @RequestMapping("/beers")
 public class BeerController {
@@ -46,4 +46,4 @@ public class BeerController {
         return ResponseEntity.ok(updatedBeer);
     }
 }
-*/
+

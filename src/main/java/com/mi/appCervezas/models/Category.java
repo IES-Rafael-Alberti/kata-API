@@ -1,6 +1,7 @@
 package com.mi.appCervezas.models;
 
-/*
+import jakarta.persistence.*;
+
 @Entity
 @Table(name = "categories")
 public class Category {
@@ -39,4 +40,4 @@ public class Category {
         this.last_mod = last_mod;
     }
 }
-*/
+

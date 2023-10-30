@@ -1,11 +1,11 @@
 package com.mi.appCervezas.models;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 
 @Entity
 @Table(name = "breweries")
-public class BreweryModel {
+public class Brewery {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

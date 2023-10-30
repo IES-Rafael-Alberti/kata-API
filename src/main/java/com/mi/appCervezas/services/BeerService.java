@@ -1,15 +1,15 @@
-/*package com.mi.appCervezas.services;
+package com.mi.appCervezas.services;
 
 import com.mi.appCervezas.models.Beer;
 import com.mi.appCervezas.repositories.BeerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;*/
+import java.util.List;
 
 
-//@Service
-/*public class BeerService {
+@Service
+public class BeerService {
 
     @Autowired
     private BeerRepository beerRepository;
@@ -39,5 +39,5 @@ import java.util.List;*/
         }
         return null;
     }
-}*/
+}
 

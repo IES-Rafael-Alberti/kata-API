@@ -1,6 +1,8 @@
 package com.mi.appCervezas.models;
 
-/*
+import jakarta.persistence.*;
+
+
 @Entity
 @Table(name = "styles")
 public class Style {
@@ -31,4 +33,4 @@ public class Style {
 
 
 }
-*/
+
