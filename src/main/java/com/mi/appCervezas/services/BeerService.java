@@ -35,9 +35,19 @@ public class BeerService {
         if (existingBeer != null) {
             existingBeer.setName(newBeer.getName());
             existingBeer.setCategory(newBeer.getCategory());
+            existingBeer.setAbv(newBeer.getAbv());
+            existingBeer.setIbu(newBeer.getIbu());
+            existingBeer.setSrm(newBeer.getSrm());
+            existingBeer.setUpc(newBeer.getUpc());
+            existingBeer.setFilepath(newBeer.getFilepath());
+            existingBeer.setDescript(newBeer.getDescript());
+            existingBeer.setAdd_user(newBeer.getAdd_user());
+            existingBeer.setLast_mod(newBeer.getLast_mod());
+
             return beerRepository.save(existingBeer);
         }
         return null;
     }
+
 }
 

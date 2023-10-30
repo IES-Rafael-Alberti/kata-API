@@ -22,15 +22,15 @@ public class CategoryService {
         return categoryRepository.findById(id).orElse(null);
     }
 
-    public Category addCategory(Category category) {
+    /*public Category addCategory(Category category) {
         return categoryRepository.save(category);
-    }
+    }*/
 
-    public void deleteCategory(Long id) {
+    /*public void deleteCategory(Long id) {
         categoryRepository.deleteById(id);
-    }
+    }*/
 
-    public Category updateCategory(Long id, Category newCategory) {
+    /*public Category updateCategory(Long id, Category newCategory) {
         Optional<Category> optionalCategory = categoryRepository.findById(id);
 
         if (optionalCategory.isPresent()) {
@@ -41,6 +41,8 @@ public class CategoryService {
             // Manejo si no se encuentra la categoría
             return null;
         }
-    }
+    }*/
+
+
 }
 

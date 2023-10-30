@@ -49,7 +49,7 @@ public class Beer {
     @Column(nullable = false, length = 11, columnDefinition = "INT DEFAULT 0")
     private int add_user;
 
-    @Column(nullable = false, columnDefinition = "TIMESTAMP DEFAULT '0000-00-00 00:00:00'")
+    @Column(nullable = false)
     private Date last_mod;
 
 
@@ -95,12 +95,70 @@ public class Beer {
         this.category = category;
     }
 
-    /*public double getAlcoholContent() {
-        return alcoholContent;
+    public float getAbv() {
+        return abv;
     }
 
-    public void setAlcoholContent(double alcoholContent) {
-        this.alcoholContent = alcoholContent;
-    }*/
+    public void setAbv(float abv) {
+        this.abv = abv;
+    }
+
+    public float getIbu() {
+        return ibu;
+    }
+
+    public void setIbu(float ibu) {
+        this.ibu = ibu;
+    }
+
+    public float getSrm() {
+        return srm;
+    }
+
+    public void setSrm(float srm) {
+        this.srm = srm;
+    }
+
+    public int getUpc() {
+        return upc;
+    }
+
+    public void setUpc(int upc) {
+        this.upc = upc;
+    }
+
+    public String getFilepath() {
+        return filepath;
+    }
+
+    public void setFilepath(String filepath) {
+        this.filepath = filepath;
+    }
+
+    public String getDescript() {
+        return descript;
+    }
+
+    public void setDescript(String descript) {
+        this.descript = descript;
+    }
+
+    public int getAdd_user() {
+        return add_user;
+    }
+
+    public void setAdd_user(int add_user) {
+        this.add_user = add_user;
+    }
+
+    public Date getLast_mod() {
+        return last_mod;
+    }
+
+    public void setLast_mod(Date last_mod) {
+        this.last_mod = last_mod;
+    }
+
+
 }
 

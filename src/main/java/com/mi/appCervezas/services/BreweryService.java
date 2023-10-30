@@ -26,15 +26,15 @@ public class BreweryService {
         return breweryRepository.findById(id).orElse(null);
     }
 
-    public Brewery addBrewery(Brewery brewery) {
+    /*public Brewery addBrewery(Brewery brewery) {
         return breweryRepository.save(brewery);
-    }
+    }*/
 
-    public void deleteBrewery(Long id) {
+    /*public void deleteBrewery(Long id) {
         breweryRepository.deleteById(id);
-    }
+    }*/
 
-    public Brewery updateBrewery(Long id, Brewery newBrewery) {
+    /*public Brewery updateBrewery(Long id, Brewery newBrewery) {
         Optional<Brewery> optionalBrewery = breweryRepository.findById(id);
 
         if (optionalBrewery.isPresent()) {
@@ -45,5 +45,7 @@ public class BreweryService {
             // Manejo si no se encuentra la cervecería
             return null;
         }
-    }
+    }*/
+
+
 }

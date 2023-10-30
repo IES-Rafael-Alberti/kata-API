@@ -14,30 +14,32 @@ public class StyleService {
     private StyleRepository styleRepository;
 
 
-    public Style getStyleById(Long id) {
-        return styleRepository.findById(id).orElse(null);
-    }
-
-    public Style addStyle(Style style) {
-        return styleRepository.save(style);
-    }
-
-    public void deleteStyle(Long id) {
-        styleRepository.deleteById(id);
-    }
-
     public List<Style> getAllStyles() {
         return styleRepository.findAll();
     }
 
-    public Style updateStyle(Long id, Style newStyle) {
+    public Style getStyleById(Long id) {
+        return styleRepository.findById(id).orElse(null);
+    }
+
+    /*public Style addStyle(Style style) {
+        return styleRepository.save(style);
+    }*/
+
+    /*public void deleteStyle(Long id) {
+        styleRepository.deleteById(id);
+    }*/
+
+    /*public Style updateStyle(Long id, Style newStyle) {
         Style existingStyle = styleRepository.findById(id).orElse(null);
         if (existingStyle != null) {
             existingStyle.setStyleName(newStyle.getStyleName());
             return styleRepository.save(existingStyle);
         }
         return null;
-    }
+    }*/
+
+
 }
 
 
