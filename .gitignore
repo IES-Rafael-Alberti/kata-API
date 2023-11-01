@@ -1,0 +1,94 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+ELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+# Ignora archivos generados por IntelliJ IDEA
+/.idea
+*.iml
+*.iws
+*.ipr
+/out
+/build
+
+# Ignora archivos generados por Maven
+/target
+mvnw
+mvnw.cmd
+
+# Ignora archivos generados por Gradle
+/.gradle
+/build
+
+# Ignora archivos generados por Docker
+.DS_Store
+docker-compose.yml
+
+# Ignora archivos generados por Spring Boot
+/application.properties
+/application.yml
+*.log
+
+# Ignora archivos de registros (logs)
+/log
+/logs
+
+# Ignora archivos generados por el sistema
+/.classpath
+/.project
+/.settings
+
+# Ignora archivos de dependencias de Gradle (si estás utilizando Gradle)
+.gradle
+/caches
+
+# Ignora archivos de dependencias de Maven (si estás utilizando Maven)
+.m2
+
+# Ignora archivos de dependencias específicas de Spring Boot (si es necesario)
+target/
+mvn-wrapper/
+
+# Ignora archivos de configuración específicos de Spring Boot (si es necesario)
+.springBeans
+.springAop
+
+# Ignora archivos de configuración específicos de Docker (si es necesario)
+dockerfile: Dockerfile
