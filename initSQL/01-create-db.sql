@@ -1,4 +1,4 @@
-SET NAMES utf8;
+git chSET NAMES utf8;
 SET time_zone = '+02:00';
 SET sql_mode = '';
 DROP DATABASE IF EXISTS `kata-api`;
