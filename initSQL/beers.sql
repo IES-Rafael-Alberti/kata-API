@@ -33,7 +33,7 @@ CREATE TABLE `beers` (
   `filepath` varchar(255) character set utf8 collate utf8_unicode_ci NOT NULL default '',
   `descript` text character set utf8 collate utf8_unicode_ci NOT NULL,
   `add_user` int(11) NOT NULL default '0',
-  `last_mod` datetime NOT NULL default '0000-00-00 00:00:00',
+  `last_mod` datetime NOT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5915 DEFAULT CHARSET=utf8mb4;
 
