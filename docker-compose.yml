@@ -2,10 +2,12 @@ version: "3"
 services:
 
   db:
-    image: mariadb
+    image: mysql
     environment:
       MYSQL_ROOT_PASSWORD: Super
-      MYSQL_DATABASE: kata-api
+      MYSQL_DATABASE: pruebaspringboot
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Mariposa$$100
     volumes:
       - ./initSQL:/docker-entrypoint-initdb.d
     ports:
