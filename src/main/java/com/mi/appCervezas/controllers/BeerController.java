@@ -1,5 +1,6 @@
 package com.mi.appCervezas.controllers;
 
+import com.mi.appCervezas.error.ProductNotFoundException;
 import com.mi.appCervezas.models.Beer;
 import com.mi.appCervezas.services.BeerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +30,13 @@ public class BeerController {
 
     @GetMapping("/beer/{id}")
     public ResponseEntity<Beer> getBeerById(@PathVariable Long id) {
-        Beer beer = beerService.getBeerById(id);
-        return ResponseEntity.ok(beer);
+        try {
+            Beer beer = beerService.getBeerById(id);
+            return ResponseEntity.ok(beer);
+        } catch (ProductNotFoundException ex) {
+            // Si la excepción es lanzada, devolvemos un HttpStatus.NOT_FOUND
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
     }
 
     @DeleteMapping("/beer/{id}")
@@ -41,7 +47,11 @@ public class BeerController {
 
     @PutMapping("/beer/{id}")
     public ResponseEntity<Beer> updateBeer(@PathVariable Long id, @RequestBody Beer beer) {
-        Beer updatedBeer = beerService.updateBeer(id, beer);
-        return ResponseEntity.ok(updatedBeer);
+        try {
+            Beer updatedBeer = beerService.updateBeer(id, beer);
+            return ResponseEntity.ok(updatedBeer);
+        } catch (ProductNotFoundException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
     }
 }
