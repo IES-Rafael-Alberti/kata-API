@@ -1,5 +1,6 @@
 package com.mi.appCervezas.services;
 
+import com.mi.appCervezas.dto.BeerDTO;
 import com.mi.appCervezas.models.Beer;
 import com.mi.appCervezas.models.Category;
 import com.mi.appCervezas.repositories.BeerRepository;
@@ -27,7 +28,7 @@ public class BeerService {
         return beerRepository.findById(id).orElse(null);
     }
 
-    public Beer addBeer(Beer beer) {
+    public Beer addBeer(BeerDTO beer) {
         return beerRepository.save(beer);
     }
 
@@ -35,7 +36,7 @@ public class BeerService {
         beerRepository.deleteById(id);
     }
 
-    public Beer updateBeer(Long id, Beer newBeer) {
+    public Beer updateBeer(Long id, BeerDTO newBeer) {
         Beer existingBeer = beerRepository.findById(id).orElse(null);
         if (existingBeer != null) {
             existingBeer.setName(newBeer.getName());

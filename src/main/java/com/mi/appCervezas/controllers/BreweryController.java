@@ -1,13 +1,18 @@
 package com.mi.appCervezas.controllers;
 
+import com.mi.appCervezas.dto.BreweryDTO;
 import com.mi.appCervezas.error.BreweryNotFoundException;
 import com.mi.appCervezas.models.Brewery;
 import com.mi.appCervezas.services.BreweryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -18,17 +23,24 @@ public class BreweryController {
     private BreweryService breweryService;
 
     @GetMapping("/breweries")
-    public List<Brewery> getAllBreweries() {
-        return breweryService.getAllBreweries();
+    public List<BreweryDTO> getAllBreweries() {
+        List<BreweryDTO> breweryDTOs = new ArrayList<>();
+        List<Brewery> breweries = breweryService.getAllBreweries();
+
+        for (Brewery brewery : breweries) {
+            breweryDTOs.add(new BreweryDTO(brewery));
+        }
+
+        return breweryDTOs;
     }
 
-    @GetMapping("/brewery/{id}")
-    public ResponseEntity<Brewery> getBreweryById(@PathVariable Long id) {
+
+    @GetMapping("/{id}")
+    public ResponseEntity<BreweryDTO> getBreweryById(@PathVariable Long id) {
         try {
-            Brewery brewery = breweryService.getBreweryById(id);
-            return ResponseEntity.ok(brewery);
+            BreweryDTO breweryDTO = new BreweryDTO(breweryService.getBreweryById(id));
+            return ResponseEntity.ok(breweryDTO);
         } catch (BreweryNotFoundException ex) {
-            // Si la excepción es lanzada, devolvemos un HttpStatus.NOT_FOUND
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }

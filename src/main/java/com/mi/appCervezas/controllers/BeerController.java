@@ -1,5 +1,6 @@
 package com.mi.appCervezas.controllers;
 
+import com.mi.appCervezas.dto.BeerDTO;
 import com.mi.appCervezas.error.BeerNotFoundException;
 import com.mi.appCervezas.models.Beer;
 import com.mi.appCervezas.services.BeerService;
@@ -8,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -18,23 +20,29 @@ public class BeerController {
     private BeerService beerService;
 
     @GetMapping("/beers")
-    public List<Beer> getAllBeers() {
-        return beerService.getAllBeers();
+    public List<BeerDTO> getAllBeers() {
+        List<BeerDTO> beerDTOs = new ArrayList<>();
+        List<Beer> beers = beerService.getAllBeers();
+
+        for (Beer beer : beers) {
+            beerDTOs.add(new BeerDTO(beer));
+        }
+
+        return beerDTOs;
     }
 
     @PostMapping("/beer")
-    public ResponseEntity<Beer> addBeer(@RequestBody Beer beer) {
-        Beer savedBeer = beerService.addBeer(beer);
-        return ResponseEntity.status(HttpStatus.CREATED).body(savedBeer);
+    public ResponseEntity<BeerDTO> addBeer(@RequestBody BeerDTO beerDTO) {
+        BeerDTO savedBeerDTO = new BeerDTO(beerService.addBeer(beerDTO));
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedBeerDTO);
     }
 
     @GetMapping("/beer/{id}")
-    public ResponseEntity<Beer> getBeerById(@PathVariable Long id) {
+    public ResponseEntity<BeerDTO> getBeerById(@PathVariable Long id) {
         try {
-            Beer beer = beerService.getBeerById(id);
-            return ResponseEntity.ok(beer);
+            BeerDTO beerDTO = new BeerDTO(beerService.getBeerById(id));
+            return ResponseEntity.ok(beerDTO);
         } catch (BeerNotFoundException ex) {
-            // Si la excepción es lanzada, devolvemos un HttpStatus.NOT_FOUND
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
@@ -46,10 +54,10 @@ public class BeerController {
     }
 
     @PutMapping("/beer/{id}")
-    public ResponseEntity<Beer> updateBeer(@PathVariable Long id, @RequestBody Beer beer) {
+    public ResponseEntity<BeerDTO> updateBeer(@PathVariable Long id, @RequestBody BeerDTO beerDTO) {
         try {
-            Beer updatedBeer = beerService.updateBeer(id, beer);
-            return ResponseEntity.ok(updatedBeer);
+            BeerDTO updatedBeerDTO = new BeerDTO(beerService.updateBeer(id, beerDTO));
+            return ResponseEntity.ok(updatedBeerDTO);
         } catch (BeerNotFoundException ex) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }

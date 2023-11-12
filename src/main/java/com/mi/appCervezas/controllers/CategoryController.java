@@ -1,5 +1,6 @@
 package com.mi.appCervezas.controllers;
 
+import com.mi.appCervezas.dto.CategoryDTO;
 import com.mi.appCervezas.error.CategoryNotFoundException;
 import com.mi.appCervezas.models.Category;
 import com.mi.appCervezas.services.CategoryService;
@@ -8,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -18,17 +20,23 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @GetMapping("/categories")
-    public List<Category> getAllCategories() {
-        return categoryService.getAllCategories();
+    public List<CategoryDTO> getAllCategories() {
+        List<CategoryDTO> categoryDTOs = new ArrayList<>();
+        List<Category> categories = categoryService.getAllCategories();
+
+        for (Category category : categories) {
+            categoryDTOs.add(new CategoryDTO(category));
+        }
+
+        return categoryDTOs;
     }
 
     @GetMapping("/category/{id}")
-    public ResponseEntity<Category> getCategoryById(@PathVariable Long id) {
+    public ResponseEntity<CategoryDTO> getCategoryById(@PathVariable Long id) {
         try {
             Category category = categoryService.getCategoryById(id);
-            return ResponseEntity.ok(category);
+            return ResponseEntity.ok(new CategoryDTO(category));
         } catch (CategoryNotFoundException ex) {
-            // Si la excepción es lanzada, devolvemos un HttpStatus.NOT_FOUND
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
