@@ -1,10 +1,12 @@
 package com.mi.appCervezas.services;
 
+import com.mi.appCervezas.dto.StyleDTO;
 import com.mi.appCervezas.models.Style;
 import com.mi.appCervezas.repositories.StyleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -13,33 +15,18 @@ public class StyleService {
     @Autowired
     private StyleRepository styleRepository;
 
+    public List<StyleDTO> getAllStyles() {
+        List<Style> styles = styleRepository.findAll();
+        List<StyleDTO> styleDTOs = new ArrayList<>();
 
-    public List<Style> getAllStyles() {
-        return styleRepository.findAll();
+        for (Style style : styles) {
+            styleDTOs.add(new StyleDTO((StyleDTO) style));
+        }
+
+        return styleDTOs;
     }
 
     public Style getStyleById(Long id) {
         return styleRepository.findById(id).orElse(null);
     }
-
-    /*public Style addStyle(Style style) {
-        return styleRepository.save(style);
-    }*/
-
-    /*public void deleteStyle(Long id) {
-        styleRepository.deleteById(id);
-    }*/
-
-    /*public Style updateStyle(Long id, Style newStyle) {
-        Style existingStyle = styleRepository.findById(id).orElse(null);
-        if (existingStyle != null) {
-            existingStyle.setStyleName(newStyle.getStyleName());
-            return styleRepository.save(existingStyle);
-        }
-        return null;
-    }*/
-
-
 }
-
-

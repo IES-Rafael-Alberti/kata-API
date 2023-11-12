@@ -4,7 +4,7 @@ import com.mi.appCervezas.models.Brewery;
 
 import java.util.Date;
 
-public class BreweryDTO {
+public class BreweryDTO extends Brewery {
 
     private Long id;
     private String name;

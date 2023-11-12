@@ -4,14 +4,14 @@ import com.mi.appCervezas.models.Style;
 
 import java.util.Date;
 
-public class StyleDTO {
+public class StyleDTO extends Style {
 
     private Long id;
     private Integer cat_id;
     private String style_name;
     private Date last_mod;
 
-    public StyleDTO(Style style) {
+    public StyleDTO(StyleDTO style) {
         this.id = style.getId();
         this.cat_id = style.getCat_id();
         this.style_name = style.getStyle_name();

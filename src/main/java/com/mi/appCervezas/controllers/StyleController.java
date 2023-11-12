@@ -22,9 +22,9 @@ public class StyleController {
     @GetMapping("/styles")
     public List<StyleDTO> getAllStyles() {
         List<StyleDTO> styleDTOs = new ArrayList<>();
-        List<Style> styles = styleService.getAllStyles();
+        List<StyleDTO> styles = styleService.getAllStyles();
 
-        for (Style style : styles) {
+        for (StyleDTO style : styles) {
             styleDTOs.add(new StyleDTO(style));
         }
 
@@ -35,7 +35,7 @@ public class StyleController {
     public ResponseEntity<StyleDTO> getStyleById(@PathVariable Long id) {
         try {
             Style style = styleService.getStyleById(id);
-            StyleDTO styleDTO = new StyleDTO(style);
+            StyleDTO styleDTO = new StyleDTO((StyleDTO) style);
             return ResponseEntity.ok(styleDTO);
         } catch (StyleNotFoundException ex) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();

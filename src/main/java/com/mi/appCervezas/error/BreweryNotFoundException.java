@@ -12,6 +12,6 @@ public class BreweryNotFoundException extends RuntimeException {
     private static final long serialVersionUID = 987654321L;
 
     public BreweryNotFoundException(Long id) {
-        super("No se puede encontrar la cervecera con Id: " + id);
+        super("No se puede encontrar la cervecera con Id: " + id.toString());
     }
 }

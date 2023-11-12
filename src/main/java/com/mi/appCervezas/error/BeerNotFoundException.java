@@ -11,7 +11,7 @@ public class BeerNotFoundException extends RuntimeException {
     @Serial
     private static final long serialVersionUID = 123456789L;
 
-    public BeerNotFoundException(Long id) {
+    public BeerNotFoundException(String id) {
         super("No se puede encontrar la cerveza con Id: " + id);
     }
 }

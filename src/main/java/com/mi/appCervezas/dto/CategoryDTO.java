@@ -4,7 +4,7 @@ import com.mi.appCervezas.models.Category;
 
 import java.util.Date;
 
-public class CategoryDTO {
+public class CategoryDTO extends Category {
 
     private Long id;
     private String cat_name;

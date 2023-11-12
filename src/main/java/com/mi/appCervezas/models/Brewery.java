@@ -1,5 +1,6 @@
 package com.mi.appCervezas.models;
 
+import com.mi.appCervezas.dto.BreweryDTO;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -51,6 +52,7 @@ public class Brewery {
 
     @Column(nullable = false)
     private Date last_mod;
+
 
     // Getters y Setters
 

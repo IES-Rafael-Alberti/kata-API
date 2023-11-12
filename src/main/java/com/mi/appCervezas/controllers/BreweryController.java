@@ -25,9 +25,9 @@ public class BreweryController {
     @GetMapping("/breweries")
     public List<BreweryDTO> getAllBreweries() {
         List<BreweryDTO> breweryDTOs = new ArrayList<>();
-        List<Brewery> breweries = breweryService.getAllBreweries();
+        List<BreweryDTO> breweries = breweryService.getAllBreweries();
 
-        for (Brewery brewery : breweries) {
+        for (BreweryDTO brewery : breweries) {
             breweryDTOs.add(new BreweryDTO(brewery));
         }
 
@@ -38,10 +38,19 @@ public class BreweryController {
     @GetMapping("/{id}")
     public ResponseEntity<BreweryDTO> getBreweryById(@PathVariable Long id) {
         try {
-            BreweryDTO breweryDTO = new BreweryDTO(breweryService.getBreweryById(id));
-            return ResponseEntity.ok(breweryDTO);
+            Brewery brewery = breweryService.getBreweryById(id);
+
+            if (brewery != null) {
+                BreweryDTO breweryDTO = new BreweryDTO(brewery);
+                return ResponseEntity.ok(breweryDTO);
+            } else {
+                // Maneja el caso donde la cervecería no fue encontrada
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            }
         } catch (BreweryNotFoundException ex) {
+            // Maneja la excepción si sucede
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
+
 }

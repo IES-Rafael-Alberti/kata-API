@@ -22,9 +22,9 @@ public class CategoryController {
     @GetMapping("/categories")
     public List<CategoryDTO> getAllCategories() {
         List<CategoryDTO> categoryDTOs = new ArrayList<>();
-        List<Category> categories = categoryService.getAllCategories();
+        List<CategoryDTO> categories = categoryService.getAllCategories();
 
-        for (Category category : categories) {
+        for (CategoryDTO category : categories) {
             categoryDTOs.add(new CategoryDTO(category));
         }
 
@@ -34,7 +34,7 @@ public class CategoryController {
     @GetMapping("/category/{id}")
     public ResponseEntity<CategoryDTO> getCategoryById(@PathVariable Long id) {
         try {
-            Category category = categoryService.getCategoryById(id);
+            CategoryDTO category = categoryService.getCategoryById(id);
             return ResponseEntity.ok(new CategoryDTO(category));
         } catch (CategoryNotFoundException ex) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();

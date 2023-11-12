@@ -11,7 +11,7 @@ public class CategoryNotFoundException extends RuntimeException {
     @Serial
     private static final long serialVersionUID = 876543210L;
 
-    public CategoryNotFoundException(Long id) {
-        super("No se puede encontrar la categoría con Id: " + id);
+    public CategoryNotFoundException(String id) {
+        super("No se puede encontrar la categoría con Id: " + id.toString());
     }
 }
