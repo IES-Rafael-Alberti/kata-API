@@ -1,0 +1,91 @@
+// Peticiones Beer
+### Funciona
+GET http://localhost:8080/beers
+
+<> 2023-11-06T123548.200.json
+
+
+
+
+###
+POST http://localhost:8080/beer
+
+<> 2023-11-06T123834.400.json
+
+
+
+
+
+### Funciona (hay que cambiar el id y el nombre a buscar según los datos de beers.sql)
+GET http://localhost:8080/beer/{{id}}
+
+<> 2023-11-06T104833.200.json
+
+
+
+###
+DELETE http://localhost:8080/beer/{{id}}
+
+
+
+
+###
+PUT http://localhost:8080/beer/{{id}}
+
+<> 2023-11-06T104842.400.json
+
+
+
+
+
+// Peticiones Brewery
+
+### Funciona
+GET http://localhost:8080/breweries
+
+<> 2023-11-06T104848.200.json
+
+
+
+### Funciona (hay que cambiar el id y el nombre a buscar según los datos de breweries.sql)
+GET http://localhost:8080/brewery/{{id}}
+
+<> 2023-11-06T104911.200.json
+
+
+
+
+// Peticiones Category
+
+### Funciona
+GET http://localhost:8080/categories
+
+<> 2023-11-06T104920.200.json
+
+
+
+
+### Funciona (hay que cambiar el id y el nombre a buscar según los datos de categories.sql)
+GET http://localhost:8080/category/{{id}}
+
+<> 2023-11-06T104927.200.json
+
+
+
+// Peticiones Style
+
+### Funciona
+GET http://localhost:8080/styles
+
+<> 2023-11-06T104935.200.json
+
+
+
+
+### Funciona (hay que cambiar el id y el nombre a buscar según los datos de styles.sql)
+GET http://localhost:8080/style/{{id}}
+
+<> 2023-11-06T104942.200.json
+
+
+

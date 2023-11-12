@@ -1,6 +1,6 @@
 package com.mi.appCervezas.controllers;
 
-import com.mi.appCervezas.error.ProductNotFoundException;
+import com.mi.appCervezas.error.CategoryNotFoundException;
 import com.mi.appCervezas.models.Category;
 import com.mi.appCervezas.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ public class CategoryController {
         try {
             Category category = categoryService.getCategoryById(id);
             return ResponseEntity.ok(category);
-        } catch (ProductNotFoundException ex) {
+        } catch (CategoryNotFoundException ex) {
             // Si la excepción es lanzada, devolvemos un HttpStatus.NOT_FOUND
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }

@@ -1,6 +1,6 @@
 package com.mi.appCervezas.controllers;
 
-import com.mi.appCervezas.error.ProductNotFoundException;
+import com.mi.appCervezas.error.BeerNotFoundException;
 import com.mi.appCervezas.models.Beer;
 import com.mi.appCervezas.services.BeerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +33,7 @@ public class BeerController {
         try {
             Beer beer = beerService.getBeerById(id);
             return ResponseEntity.ok(beer);
-        } catch (ProductNotFoundException ex) {
+        } catch (BeerNotFoundException ex) {
             // Si la excepción es lanzada, devolvemos un HttpStatus.NOT_FOUND
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
@@ -50,7 +50,7 @@ public class BeerController {
         try {
             Beer updatedBeer = beerService.updateBeer(id, beer);
             return ResponseEntity.ok(updatedBeer);
-        } catch (ProductNotFoundException ex) {
+        } catch (BeerNotFoundException ex) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }

@@ -1,6 +1,6 @@
 package com.mi.appCervezas.controllers;
 
-import com.mi.appCervezas.error.ProductNotFoundException;
+import com.mi.appCervezas.error.StyleNotFoundException;
 import com.mi.appCervezas.models.Style;
 import com.mi.appCervezas.services.StyleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ public class StyleController {
         try {
             Style style = styleService.getStyleById(id);
             return ResponseEntity.ok(style);
-        } catch (ProductNotFoundException ex) {
+        } catch (StyleNotFoundException ex) {
             // Si la excepción es lanzada, devolvemos un HttpStatus.NOT_FOUND
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
