@@ -10,6 +10,22 @@ GET http://localhost:8080/beers
 ###
 POST http://localhost:8080/beer
 
+Content-Type: application/json
+{
+  "name": "Ale del Bosque",
+  "abv": 5.0,
+  "ibu": 30,
+  "srm": 15,
+  "upc": 123456789,
+  "filepath": "/path/to/image.jpg",
+  "descript": "Una cerveza de tipo ale inspirada en los bosques, con aromas a hierbas frescas y un sabor equilibrado.",
+  "add_user": 1,
+  "last_mod": "2023-10-28",
+  "categoryId": 1,
+  "styleId": 1
+}
+
+
 <> 2023-11-06T123834.400.json
 
 
@@ -17,7 +33,12 @@ POST http://localhost:8080/beer
 
 
 ### Funciona (hay que cambiar el id y el nombre a buscar según los datos de beers.sql)
-GET http://localhost:8080/beer/{{id}}
+GET http://localhost:8080/beer/2
+
+Content-Type: application/json
+{
+
+}
 
 <> 2023-11-06T104833.200.json
 
