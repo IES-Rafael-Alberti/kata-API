@@ -9,8 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/")
@@ -21,19 +21,17 @@ public class BeerController {
 
     @GetMapping("/beers")
     public List<BeerDTO> getAllBeers() {
-        List<BeerDTO> beerDTOs = new ArrayList<>();
         List<Beer> beers = beerService.getAllBeers();
-
-        for (Beer beer : beers) {
-            beerDTOs.add(new BeerDTO(beer));
-        }
-
-        return beerDTOs;
+        return beers.stream()
+                .map(BeerDTO::new)
+                .collect(Collectors.toList());
     }
 
     @PostMapping("/beer")
     public ResponseEntity<BeerDTO> addBeer(@RequestBody BeerDTO beerDTO) {
-        BeerDTO savedBeerDTO = new BeerDTO(beerService.addBeer(beerDTO));
+        Beer beer = beerDTO.toBeer();
+        Beer savedBeer = beerService.addBeer(beer);
+        BeerDTO savedBeerDTO = new BeerDTO(savedBeer);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedBeerDTO);
     }
 
@@ -56,7 +54,9 @@ public class BeerController {
     @PutMapping("/beer/{id}")
     public ResponseEntity<BeerDTO> updateBeer(@PathVariable Long id, @RequestBody BeerDTO beerDTO) {
         try {
-            BeerDTO updatedBeerDTO = new BeerDTO(beerService.updateBeer(id, beerDTO));
+            Beer beer = beerDTO.toBeer();
+            Beer updatedBeer = beerService.updateBeer(id, beer);
+            BeerDTO updatedBeerDTO = new BeerDTO(updatedBeer);
             return ResponseEntity.ok(updatedBeerDTO);
         } catch (BeerNotFoundException ex) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();

@@ -23,10 +23,10 @@ public class BeerDTO {
     // Constructor
     public BeerDTO(Beer beer) {
         this.id = beer.getId();
-        this.breweryId = beer.getBrewery().getId();
+        this.breweryId = beer.getBreweryId();
         this.name = beer.getName();
-        this.categoryId = beer.getCategory().getId();
-        this.styleId = beer.getStyle().getId();
+        this.categoryId = beer.getCategoryId();
+        this.styleId = beer.getStyleId();
         this.abv = beer.getAbv();
         this.ibu = beer.getIbu();
         this.srm = beer.getSrm();
@@ -37,9 +37,7 @@ public class BeerDTO {
         this.last_mod = beer.getLast_mod();
     }
 
-
     // Getters y Setters
-
 
     public Long getId() {
         return id;
@@ -143,5 +141,24 @@ public class BeerDTO {
 
     public void setLast_mod(Date last_mod) {
         this.last_mod = last_mod;
+    }
+
+    // Método para transformar BeerDTO a Beer
+    public Beer toBeer() {
+        Beer beer = new Beer();
+        beer.setId(this.id);
+        beer.setBreweryId(this.breweryId);
+        beer.setName(this.name);
+        beer.setCategoryId(this.categoryId);
+        beer.setStyleId(this.styleId);
+        beer.setAbv(this.abv);
+        beer.setIbu(this.ibu);
+        beer.setSrm(this.srm);
+        beer.setUpc(this.upc);
+        beer.setFilepath(this.filepath);
+        beer.setDescript(this.descript);
+        beer.setAdd_user(this.add_user);
+        beer.setLast_mod(this.last_mod);
+        return beer;
     }
 }

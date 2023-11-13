@@ -1,6 +1,5 @@
 package com.mi.appCervezas.services;
 
-import com.mi.appCervezas.dto.BeerDTO;
 import com.mi.appCervezas.error.BeerNotFoundException;
 import com.mi.appCervezas.error.CategoryNotFoundException;
 import com.mi.appCervezas.models.Beer;
@@ -31,7 +30,7 @@ public class BeerService {
     }
 
     @Transactional
-    public Beer addBeer(BeerDTO beerDTO) {
+    public Beer addBeer(Beer beerDTO) {
         Beer beer = new Beer();
 
         beer.setName(beerDTO.getName());
@@ -52,7 +51,7 @@ public class BeerService {
     }
 
     @Transactional
-    public Beer updateBeer(Long id, BeerDTO newBeer) {
+    public Beer updateBeer(Long id, Beer newBeer) {
         Beer existingBeer = beerRepository.findById(id)
                 .orElseThrow(() -> new BeerNotFoundException("Beer not found with id: " + id));
 
@@ -61,8 +60,13 @@ public class BeerService {
         }
 
         existingBeer.setAbv(newBeer.getAbv());
-
-        // Repite para otros campos...
+        existingBeer.setIbu(newBeer.getIbu());
+        existingBeer.setSrm(newBeer.getSrm());
+        existingBeer.setUpc(newBeer.getUpc());
+        existingBeer.setFilepath(newBeer.getFilepath());
+        existingBeer.setDescript(newBeer.getDescript());
+        existingBeer.setAdd_user(newBeer.getAdd_user());
+        existingBeer.setLast_mod(newBeer.getLast_mod());
 
         // Verificar si la nueva categoría es válida
         Long categoryId = newBeer.getCategoryId();
@@ -70,12 +74,9 @@ public class BeerService {
             // Verificar si la categoría existe en la base de datos
             Category existingCategory = categoryRepository.findById(categoryId)
                     .orElseThrow(() -> new CategoryNotFoundException("Category not found with id: " + categoryId));
-            existingBeer.setCategory(existingCategory);
+            existingBeer.setCategoryId(categoryId);
         }
 
         return beerRepository.save(existingBeer);
     }
-
-
-
 }

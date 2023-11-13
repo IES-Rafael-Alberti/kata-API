@@ -1,9 +1,7 @@
 package com.mi.appCervezas.models;
 
 import jakarta.persistence.*;
-
 import java.util.Date;
-
 
 @Entity
 @Table(name = "beers")
@@ -13,20 +11,17 @@ public class Beer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "brewery_id", nullable = false)
-    private Brewery brewery;
+    @Column(name = "brewery_id", nullable = false)
+    private Long breweryId;
 
     @Column(nullable = false)
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "cat_id", nullable = false)
-    private Category category;
+    @Column(name = "cat_id", nullable = false)
+    private Long categoryId;
 
-    @ManyToOne
-    @JoinColumn(name = "style_id", nullable = false)
-    private Style style;
+    @Column(name = "style_id", nullable = false)
+    private Long styleId;
 
     @Column(nullable = false, columnDefinition = "FLOAT DEFAULT 0")
     private float abv;
@@ -52,8 +47,12 @@ public class Beer {
     @Column(nullable = false)
     private Date last_mod;
 
+    @ManyToOne
+    @JoinColumn(name = "cat_id", insertable = false, updatable = false)
+    private Category categoryEntity;
 
     // Getters y Setters
+
 
     public Long getId() {
         return id;
@@ -61,6 +60,14 @@ public class Beer {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getBreweryId() {
+        return breweryId;
+    }
+
+    public void setBreweryId(Long breweryId) {
+        this.breweryId = breweryId;
     }
 
     public String getName() {
@@ -71,28 +78,20 @@ public class Beer {
         this.name = name;
     }
 
-    public Style getStyle() {
-        return style;
+    public Long getCategoryId() {
+        return categoryId;
     }
 
-    public void setStyle(Style style) {
-        this.style = style;
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
     }
 
-    public Brewery getBrewery() {
-        return brewery;
+    public Long getStyleId() {
+        return styleId;
     }
 
-    public void setBrewery(Brewery brewery) {
-        this.brewery = brewery;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setStyleId(Long styleId) {
+        this.styleId = styleId;
     }
 
     public float getAbv() {
@@ -159,6 +158,11 @@ public class Beer {
         this.last_mod = last_mod;
     }
 
+    public Category getCategoryEntity() {
+        return categoryEntity;
+    }
 
+    public void setCategoryEntity(Category categoryEntity) {
+        this.categoryEntity = categoryEntity;
+    }
 }
-
