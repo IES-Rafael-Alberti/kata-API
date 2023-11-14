@@ -33,6 +33,7 @@ public class BeerService {
     public Beer addBeer(Beer beerDTO) {
         Beer beer = new Beer();
 
+        beer.setBreweryId(beerDTO.getBreweryId());
         beer.setName(beerDTO.getName());
         beer.setAbv(beerDTO.getAbv());
         beer.setIbu(beerDTO.getIbu());
@@ -45,6 +46,7 @@ public class BeerService {
 
         return beerRepository.save(beer);
     }
+
 
     public void deleteBeer(Long id) {
         beerRepository.deleteById(id);

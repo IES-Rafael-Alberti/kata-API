@@ -1,5 +1,5 @@
 // Peticiones Beer
-### Funciona
+### Funciona: Nos devuelve la lista de todas las cervezas guardadas
 GET http://localhost:8080/beers
 
 
@@ -7,7 +7,7 @@ GET http://localhost:8080/beers
 
 
 
-### No funciona
+### No funciona: Se le pasa los datos de la cerveza que queremos agregar a la lista de cervezas
 POST http://localhost:8080/beer
 
 Content-Type: application/json
@@ -31,19 +31,19 @@ Content-Type: application/json
 
 
 
-### Funciona (hay que cambiar el id y el nombre a buscar según los datos de beers.sql)
+### Funciona: Recupera la información sobre una cerveza con id el cual le pasamos
 GET http://localhost:8080/beer/2
 
 
 
 
-### Funciona (se le pasa el id de la cerveza que queremos eliminar)
+### Funciona: (se le pasa el id de la cerveza que queremos eliminar de la base de datos)
 DELETE http://localhost:8080/beer/9
 
 
 
 
-###
+### Funciona: Se le pasa el id de la cerveza que queremos actualizar de la base de datos y los datos nuevos a modificar
 PUT http://localhost:8080/beer/4
 
 Content-Type: application/json
@@ -67,13 +67,13 @@ Content-Type: application/json
 
 // Peticiones Brewery
 
-### Funciona
+### Funciona: Recupera información sobre todas las cervecerías almacenadas
 GET http://localhost:8080/breweries
 
 
 
 
-### No funciona (hay que cambiar el id y el nombre a buscar según los datos de breweries.sql)
+### Funciona: Recupera la información sobre una cervecería con id que le pasamos
 GET http://localhost:8080/brewery/4
 
 
@@ -82,14 +82,14 @@ GET http://localhost:8080/brewery/4
 
 // Peticiones Category
 
-### Funciona
+### Funciona: Le pedimos que nos devuelva la lista de las categorías
 GET http://localhost:8080/categories
 
 
 
 
 
-### Funciona (hay que cambiar el id y el nombre a buscar según los datos de categories.sql)
+### Funciona: Le pedimos que nos devuelva la información de una categoría con el id que le pasemos
 GET http://localhost:8080/category/6
 
 
@@ -97,14 +97,14 @@ GET http://localhost:8080/category/6
 
 // Peticiones Style
 
-### No funciona
+### Funciona: Solicitamos que nos devuelva todos los estilos de cervezas disponibles
 GET http://localhost:8080/styles
 
 
 
 
 
-### No funciona (hay que cambiar el id y el nombre a buscar según los datos de styles.sql)
+### Funciona: Le pedimos que nos devuelva la información del estilo de cerveza con el id que le pasemos
 GET http://localhost:8080/style/4
 
 

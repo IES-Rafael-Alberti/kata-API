@@ -29,11 +29,32 @@ public class BeerController {
 
     @PostMapping("/beer")
     public ResponseEntity<BeerDTO> addBeer(@RequestBody BeerDTO beerDTO) {
-        Beer beer = beerDTO.toBeer();
-        Beer savedBeer = beerService.addBeer(beer);
-        BeerDTO savedBeerDTO = new BeerDTO(savedBeer);
-        return ResponseEntity.status(HttpStatus.CREATED).body(savedBeerDTO);
+        try {
+            if (beerDTO.getBreweryId() == null) {
+                throw new IllegalArgumentException("breweryId no puede ser nulo");
+            }
+
+            Beer beer = beerDTO.toBeer();
+
+            if (beer.getBreweryId() == null) {
+                throw new IllegalArgumentException("breweryId en Beer no puede ser nulo");
+            }
+
+            Beer savedBeer = beerService.addBeer(beer);
+            BeerDTO savedBeerDTO = new BeerDTO(savedBeer);
+            return ResponseEntity.status(HttpStatus.CREATED).body(savedBeerDTO);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
     }
+
+
+
+
+
 
     @GetMapping("/beer/{id}")
     public ResponseEntity<BeerDTO> getBeerById(@PathVariable Long id) {

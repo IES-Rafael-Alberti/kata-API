@@ -35,7 +35,7 @@ public class StyleController {
     public ResponseEntity<StyleDTO> getStyleById(@PathVariable Long id) {
         try {
             Style style = styleService.getStyleById(id);
-            StyleDTO styleDTO = new StyleDTO((StyleDTO) style);
+            StyleDTO styleDTO = new StyleDTO(style);
             return ResponseEntity.ok(styleDTO);
         } catch (StyleNotFoundException ex) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();

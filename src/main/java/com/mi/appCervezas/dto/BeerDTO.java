@@ -9,7 +9,7 @@ public class BeerDTO {
     private Long id;
     private Long breweryId;
     private String name;
-    private Long categoryId;
+    private Long categoryId = 0L;
     private Long styleId;
     private float abv;
     private float ibu;
@@ -19,6 +19,9 @@ public class BeerDTO {
     private String descript;
     private int add_user;
     private Date last_mod;
+
+    public BeerDTO() {
+    }
 
     // Constructor
     public BeerDTO(Beer beer) {
@@ -149,7 +152,7 @@ public class BeerDTO {
         beer.setId(this.id);
         beer.setBreweryId(this.breweryId);
         beer.setName(this.name);
-        beer.setCategoryId(this.categoryId);
+        beer.setCategoryId(this.categoryId != null ? this.categoryId : 0);
         beer.setStyleId(this.styleId);
         beer.setAbv(this.abv);
         beer.setIbu(this.ibu);
@@ -161,4 +164,5 @@ public class BeerDTO {
         beer.setLast_mod(this.last_mod);
         return beer;
     }
+
 }

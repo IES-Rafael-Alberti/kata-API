@@ -35,7 +35,7 @@ public class BreweryController {
     }
 
 
-    @GetMapping("/{id}")
+    @GetMapping("/brewery/{id}")
     public ResponseEntity<BreweryDTO> getBreweryById(@PathVariable Long id) {
         try {
             Brewery brewery = breweryService.getBreweryById(id);

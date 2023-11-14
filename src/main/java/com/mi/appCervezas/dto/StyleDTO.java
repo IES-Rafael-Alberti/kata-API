@@ -11,7 +11,7 @@ public class StyleDTO extends Style {
     private String style_name;
     private Date last_mod;
 
-    public StyleDTO(StyleDTO style) {
+    public StyleDTO(Style style) {
         this.id = style.getId();
         this.cat_id = style.getCat_id();
         this.style_name = style.getStyle_name();

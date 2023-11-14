@@ -20,7 +20,8 @@ public class StyleService {
         List<StyleDTO> styleDTOs = new ArrayList<>();
 
         for (Style style : styles) {
-            styleDTOs.add(new StyleDTO((StyleDTO) style));
+            styleDTOs.add(new StyleDTO(style));
+
         }
 
         return styleDTOs;
