@@ -47,9 +47,9 @@ public class Beer {
     @Column(nullable = false)
     private Date last_mod;
 
-    @ManyToOne
-    @JoinColumn(name = "cat_id", insertable = false, updatable = false)
-    private Category categoryEntity;
+    public Beer() {
+    }
+
 
     // Getters y Setters
 
@@ -78,6 +78,10 @@ public class Beer {
         this.name = name;
     }
 
+   public void setCategory(Category category) {
+        this.categoryId = category.getId();
+    }
+
     public Long getCategoryId() {
         return categoryId;
     }
@@ -85,6 +89,7 @@ public class Beer {
     public void setCategoryId(Long categoryId) {
         this.categoryId = categoryId;
     }
+
 
     public Long getStyleId() {
         return styleId;
@@ -158,11 +163,4 @@ public class Beer {
         this.last_mod = last_mod;
     }
 
-    public Category getCategoryEntity() {
-        return categoryEntity;
-    }
-
-    public void setCategoryEntity(Category categoryEntity) {
-        this.categoryEntity = categoryEntity;
-    }
 }

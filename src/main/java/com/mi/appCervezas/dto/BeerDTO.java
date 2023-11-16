@@ -9,7 +9,7 @@ public class BeerDTO {
     private Long id;
     private Long breweryId;
     private String name;
-    private Long categoryId = 0L;
+    private Long categoryId;
     private Long styleId;
     private float abv;
     private float ibu;
@@ -20,9 +20,14 @@ public class BeerDTO {
     private int add_user;
     private Date last_mod;
 
+    /* Constructor sin argumentos:
+    Jackson usa el constructor sin argumentos para
+    crear una instancia de la clase antes de establecer los campos en ella
+    */
     public BeerDTO() {
     }
 
+    // Constructor con Beer
     // Constructor
     public BeerDTO(Beer beer) {
         this.id = beer.getId();
@@ -152,7 +157,11 @@ public class BeerDTO {
         beer.setId(this.id);
         beer.setBreweryId(this.breweryId);
         beer.setName(this.name);
-        beer.setCategoryId(this.categoryId != null ? this.categoryId : 0);
+        if (this.categoryId == null) {
+            throw new IllegalArgumentException("categoryId no puede ser nulo");
+        } else {
+            beer.setCategoryId(this.categoryId);
+        }
         beer.setStyleId(this.styleId);
         beer.setAbv(this.abv);
         beer.setIbu(this.ibu);

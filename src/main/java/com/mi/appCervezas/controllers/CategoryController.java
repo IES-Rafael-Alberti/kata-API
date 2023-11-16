@@ -32,12 +32,17 @@ public class CategoryController {
     }
 
     @GetMapping("/category/{id}")
-    public ResponseEntity<CategoryDTO> getCategoryById(@PathVariable Long id) {
+    public ResponseEntity<?> getCategoryById(@PathVariable Long id) {
         try {
             CategoryDTO category = categoryService.getCategoryById(id);
-            return ResponseEntity.ok(new CategoryDTO(category));
-        } catch (CategoryNotFoundException ex) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            if (category != null) {
+                return ResponseEntity.ok(new CategoryDTO(category));
+            } else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            }
+        } catch (Exception ex) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error en el servidor");
         }
     }
+
 }

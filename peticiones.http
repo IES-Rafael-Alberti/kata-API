@@ -12,21 +12,20 @@ POST http://localhost:8080/beer
 
 Content-Type: application/json
 {
-
-    "breweryId": 1,
-    "name": "Ale del Bosque",
-    "categoryId": 1,
-    "styleId": 1,
-    "abv": 5.0,
-    "ibu": 30.0,
-    "srm": 15.0,
-    "upc": 123456789,
+    "breweryId": 2,
+    "name": "Lager del Mar",
+    "categoryId": 2,
+    "styleId": 2,
+    "abv": 4.5,
+    "ibu": 20.0,
+    "srm": 10.0,
+    "upc": 987654321,
     "filepath": "",
-    "descript": "Una cerveza de tipo ale inspirada en los bosques, con aromas a hierbas frescas y un sabor equilibrado.",
-    "add_user": 1,
-    "last_mod": "2023-10-30T12:00:00.000+00:00"
-
+    "descript": "Una cerveza de tipo lager con un toque marino, refrescante y ligera, perfecta para los días de verano.",
+    "add_user": 2,
+    "last_mod": "2023-11-30T12:00:00.000+00:00"
 }
+
 
 
 

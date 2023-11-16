@@ -61,6 +61,14 @@ public class BeerService {
             existingBeer.setName(newBeer.getName());
         }
 
+        if (newBeer.getBreweryId() != null) {
+            existingBeer.setBreweryId(newBeer.getBreweryId());
+        }
+
+        if (newBeer.getStyleId() != null) {
+            existingBeer.setStyleId(newBeer.getStyleId());
+        }
+
         existingBeer.setAbv(newBeer.getAbv());
         existingBeer.setIbu(newBeer.getIbu());
         existingBeer.setSrm(newBeer.getSrm());
@@ -81,4 +89,6 @@ public class BeerService {
 
         return beerRepository.save(existingBeer);
     }
+
+
 }

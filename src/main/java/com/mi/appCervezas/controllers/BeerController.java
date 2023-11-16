@@ -3,7 +3,9 @@ package com.mi.appCervezas.controllers;
 import com.mi.appCervezas.dto.BeerDTO;
 import com.mi.appCervezas.error.BeerNotFoundException;
 import com.mi.appCervezas.models.Beer;
+import com.mi.appCervezas.models.Category;
 import com.mi.appCervezas.services.BeerService;
+import com.mi.appCervezas.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,8 +18,13 @@ import java.util.stream.Collectors;
 @RequestMapping("/")
 public class BeerController {
 
+
     @Autowired
     private BeerService beerService;
+
+    @Autowired
+    private CategoryService categoryService;
+
 
     @GetMapping("/beers")
     public List<BeerDTO> getAllBeers() {
@@ -28,14 +35,28 @@ public class BeerController {
     }
 
     @PostMapping("/beer")
-    public ResponseEntity<BeerDTO> addBeer(@RequestBody BeerDTO beerDTO) {
+    public ResponseEntity<?> addBeer(@RequestBody BeerDTO beerDTO) {
         try {
-            if (beerDTO.getBreweryId() == null) {
-                throw new IllegalArgumentException("breweryId no puede ser nulo");
+            // Validación adicional
+            validateBeerDTO(beerDTO);
+
+            // Registros detallados
+            System.out.println("BeerDTO recibido: " + beerDTO);
+
+            // Obtener la categoría por ID utilizando el CategoryService
+            Category category = categoryService.getCategoryById(beerDTO.getCategoryId());
+            if (category == null) {
+                throw new IllegalArgumentException("No se encontró una categoría con el ID proporcionado: " + beerDTO.getCategoryId());
             }
 
+            // Configurar la categoría en la cerveza
             Beer beer = beerDTO.toBeer();
+            beer.setCategory(category);
+            beer.setCategoryId(category.getId()); // Establecer el categoryId
 
+            System.out.println("Beer creado: " + beer);
+
+            // Comprobar que breweryId no sea nulo
             if (beer.getBreweryId() == null) {
                 throw new IllegalArgumentException("breweryId en Beer no puede ser nulo");
             }
@@ -44,10 +65,26 @@ public class BeerController {
             BeerDTO savedBeerDTO = new BeerDTO(savedBeer);
             return ResponseEntity.status(HttpStatus.CREATED).body(savedBeerDTO);
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+            System.err.println(e.getMessage());
+            return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+            System.err.println(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Se produjo un error en el servidor");
+        }
+    }
+
+    private void validateBeerDTO(BeerDTO beerDTO) {
+        if (beerDTO.getBreweryId() == null) {
+            throw new IllegalArgumentException("breweryId no puede ser nulo");
+        }
+        if (beerDTO.getName() == null || beerDTO.getName().isEmpty()) {
+            throw new IllegalArgumentException("name no puede ser nulo o vacío");
+        }
+        if (beerDTO.getAbv() <= 0 || beerDTO.getAbv() > 100) {
+            throw new IllegalArgumentException("abv debe estar entre 0 y 100");
+        }
+        if (beerDTO.getCategoryId() == null) {
+            throw new IllegalArgumentException("categoryId no puede ser nulo");
         }
     }
 
