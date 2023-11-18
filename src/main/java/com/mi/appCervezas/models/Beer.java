@@ -11,17 +11,27 @@ public class Beer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "brewery_id", nullable = false)
-    private Long breweryId;
-
     @Column(nullable = false)
     private String name;
 
-    @Column(name = "cat_id", nullable = false)
-    private Long categoryId;
+    @ManyToOne
+    @JoinColumn(name = "cat_id", nullable = false)
+    private Category category;
 
-    @Column(name = "style_id", nullable = false)
-    private Long styleId;
+    @ManyToOne
+    @JoinColumn(name = "brewery_id", nullable = false)
+    private Brewery brewery;
+
+    @ManyToOne
+    @JoinColumn(name = "style_id", nullable = false)
+    private Style style;
+
+
+    /*@Column(name = "brewery_id", nullable = false)
+    private Long breweryId;*/
+
+    /*@Column(name = "style_id", nullable = false)
+    private Long styleId;*/
 
     @Column(nullable = false, columnDefinition = "FLOAT DEFAULT 0")
     private float abv;
@@ -62,14 +72,6 @@ public class Beer {
         this.id = id;
     }
 
-    public Long getBreweryId() {
-        return breweryId;
-    }
-
-    public void setBreweryId(Long breweryId) {
-        this.breweryId = breweryId;
-    }
-
     public String getName() {
         return name;
     }
@@ -78,25 +80,28 @@ public class Beer {
         this.name = name;
     }
 
-   public void setCategory(Category category) {
-        this.categoryId = category.getId();
+    public Category getCategory() {
+        return category;
     }
 
-    public Long getCategoryId() {
-        return categoryId;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
-    public void setCategoryId(Long categoryId) {
-        this.categoryId = categoryId;
+    public Brewery getBrewery() {
+        return brewery;
     }
 
-
-    public Long getStyleId() {
-        return styleId;
+    public void setBrewery(Brewery brewery) {
+        this.brewery = brewery;
     }
 
-    public void setStyleId(Long styleId) {
-        this.styleId = styleId;
+    public Style getStyle() {
+        return style;
+    }
+
+    public void setStyle(Style style) {
+        this.style = style;
     }
 
     public float getAbv() {

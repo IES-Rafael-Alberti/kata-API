@@ -1,11 +1,18 @@
 package com.mi.appCervezas.services;
 
+import com.mi.appCervezas.dto.BeerDTO;
 import com.mi.appCervezas.error.BeerNotFoundException;
+import com.mi.appCervezas.error.BreweryNotFoundException;
 import com.mi.appCervezas.error.CategoryNotFoundException;
+import com.mi.appCervezas.error.StyleNotFoundException;
 import com.mi.appCervezas.models.Beer;
+import com.mi.appCervezas.models.Brewery;
 import com.mi.appCervezas.models.Category;
+import com.mi.appCervezas.models.Style;
 import com.mi.appCervezas.repositories.BeerRepository;
+import com.mi.appCervezas.repositories.BreweryRepository;
 import com.mi.appCervezas.repositories.CategoryRepository;
+import com.mi.appCervezas.repositories.StyleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,6 +28,12 @@ public class BeerService {
     @Autowired
     private CategoryRepository categoryRepository;
 
+    @Autowired
+    private BreweryRepository breweryRepository;
+
+    @Autowired
+    private StyleRepository styleRepository;
+
     public List<Beer> getAllBeers() {
         return beerRepository.findAll();
     }
@@ -30,10 +43,39 @@ public class BeerService {
     }
 
     @Transactional
-    public Beer addBeer(Beer beerDTO) {
+    public Beer addBeer(BeerDTO beerDTO) {
         Beer beer = new Beer();
 
-        beer.setBreweryId(beerDTO.getBreweryId());
+        // Configurar la relación con Brewery
+        Long brewery_id = beerDTO.getBrewery_id();
+        if (brewery_id != null) {
+            Brewery brewery = new Brewery();
+            brewery.setId(brewery_id);
+            beer.setBrewery(brewery);
+        } else {
+            beer.setBrewery(null);
+        }
+
+        // Configurar la relación con Category
+        Long cat_id = beerDTO.getCat_id();
+        if (cat_id != null) {
+            Category category = categoryRepository.findById(cat_id)
+                    .orElseThrow(() -> new CategoryNotFoundException("Category not found with id: " + cat_id));
+            beer.setCategory(category);
+        } else {
+            beer.setCategory(null);
+        }
+
+        // Configurar la relación con Style
+        Long style_id = beerDTO.getStyle_id();
+        if (style_id != null) {
+            Style style = new Style();
+            style.setId(style_id);
+            beer.setStyle(style);
+        } else {
+            beer.setStyle(null);
+        }
+
         beer.setName(beerDTO.getName());
         beer.setAbv(beerDTO.getAbv());
         beer.setIbu(beerDTO.getIbu());
@@ -46,6 +88,7 @@ public class BeerService {
 
         return beerRepository.save(beer);
     }
+
 
 
     public void deleteBeer(Long id) {
@@ -61,12 +104,26 @@ public class BeerService {
             existingBeer.setName(newBeer.getName());
         }
 
-        if (newBeer.getBreweryId() != null) {
-            existingBeer.setBreweryId(newBeer.getBreweryId());
+        // Configurar la relación con Brewery
+        if (newBeer.getBrewery() != null && newBeer.getBrewery().getId() != null) {
+            Long brewery_id = newBeer.getBrewery().getId();
+            Brewery existingBrewery = breweryRepository.findById(brewery_id)
+                    .orElseThrow(() -> new BreweryNotFoundException("Brewery not found with id: " + brewery_id));
+            existingBeer.setBrewery(existingBrewery);
+        } else {
+            // Manejar el caso donde brewery es nulo o brewery_id es nulo
+            existingBeer.setBrewery(null);
         }
 
-        if (newBeer.getStyleId() != null) {
-            existingBeer.setStyleId(newBeer.getStyleId());
+        // Configurar la relación con Style
+        if (newBeer.getStyle() != null && newBeer.getStyle().getId() != null) {
+            Long style_id = newBeer.getStyle().getId();
+            Style existingStyle = styleRepository.findById(style_id)
+                    .orElseThrow(() -> new StyleNotFoundException("Style not found with id: " + style_id));
+            existingBeer.setStyle(existingStyle);
+        } else {
+            // Manejar el caso donde style es nulo o style_id es nulo
+            existingBeer.setStyle(null);
         }
 
         existingBeer.setAbv(newBeer.getAbv());
@@ -78,17 +135,22 @@ public class BeerService {
         existingBeer.setAdd_user(newBeer.getAdd_user());
         existingBeer.setLast_mod(newBeer.getLast_mod());
 
-        // Verificar si la nueva categoría es válida
-        Long categoryId = newBeer.getCategoryId();
-        if (categoryId != null) {
-            // Verificar si la categoría existe en la base de datos
-            Category existingCategory = categoryRepository.findById(categoryId)
-                    .orElseThrow(() -> new CategoryNotFoundException("Category not found with id: " + categoryId));
-            existingBeer.setCategoryId(categoryId);
+        // Configurar la relación con Category
+        Category newCategory = newBeer.getCategory();
+        if (newCategory != null && newCategory.getId() != null) {
+            Long cat_id = newCategory.getId();
+            Category existingCategory = categoryRepository.findById(cat_id)
+                    .orElseThrow(() -> new CategoryNotFoundException("Category not found with id: " + cat_id));
+            existingBeer.setCategory(existingCategory);
+        } else {
+            // Manejar el caso donde category es nulo o cat_id es nulo
+            existingBeer.setCategory(null);
         }
 
         return beerRepository.save(existingBeer);
     }
+
+
 
 
 }

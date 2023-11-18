@@ -11,7 +11,7 @@ public class StyleNotFoundException extends RuntimeException {
     @Serial
     private static final long serialVersionUID = 987654321L;
 
-    public StyleNotFoundException(Long id) {
+    public StyleNotFoundException(String id) {
         super("No se puede encontrar el estilo con Id: " + id.toString());
     }
 }

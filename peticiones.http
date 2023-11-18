@@ -7,15 +7,15 @@ GET http://localhost:8080/beers
 
 
 
-### No funciona: Se le pasa los datos de la cerveza que queremos agregar a la lista de cervezas
+### Funciona: Se le pasa los datos de la cerveza que queremos agregar a la lista de cervezas
 POST http://localhost:8080/beer
 
 Content-Type: application/json
 {
-    "breweryId": 2,
+    "brewery_id": 2,
     "name": "Lager del Mar",
-    "categoryId": 2,
-    "styleId": 2,
+    "cat_id": 2,
+    "style_id": 2,
     "abv": 4.5,
     "ibu": 20.0,
     "srm": 10.0,
@@ -47,10 +47,10 @@ PUT http://localhost:8080/beer/4
 
 Content-Type: application/json
 {
-  "breweryId": 1,
-    "name": "Golden Ale",
-    "categoryId": 2,
-    "styleId": 3,
+    "brewery_id": 1,
+    "name": "Magic Ale",
+    "cat_id": 2,
+    "style_id": 3,
     "abv": 9.5,
     "ibu": 20.0,
     "srm": 6.0,

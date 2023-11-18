@@ -1,16 +1,19 @@
 package com.mi.appCervezas.dto;
 
 import com.mi.appCervezas.models.Beer;
+import com.mi.appCervezas.models.Brewery;
+import com.mi.appCervezas.models.Category;
+import com.mi.appCervezas.models.Style;
 
 import java.util.Date;
 
 public class BeerDTO {
 
     private Long id;
-    private Long breweryId;
+    private Long brewery_id;
     private String name;
-    private Long categoryId;
-    private Long styleId;
+    private Long cat_id;
+    private Long style_id;
     private float abv;
     private float ibu;
     private float srm;
@@ -27,14 +30,17 @@ public class BeerDTO {
     public BeerDTO() {
     }
 
+
     // Constructor con Beer
     // Constructor
     public BeerDTO(Beer beer) {
         this.id = beer.getId();
-        this.breweryId = beer.getBreweryId();
+        this.brewery_id = beer.getBrewery().getId();
         this.name = beer.getName();
-        this.categoryId = beer.getCategoryId();
-        this.styleId = beer.getStyleId();
+        if (beer.getCategory() != null) {
+            this.cat_id = beer.getCategory().getId();
+        }
+        this.style_id = beer.getStyle().getId();
         this.abv = beer.getAbv();
         this.ibu = beer.getIbu();
         this.srm = beer.getSrm();
@@ -47,6 +53,7 @@ public class BeerDTO {
 
     // Getters y Setters
 
+
     public Long getId() {
         return id;
     }
@@ -55,12 +62,12 @@ public class BeerDTO {
         this.id = id;
     }
 
-    public Long getBreweryId() {
-        return breweryId;
+    public Long getBrewery_id() {
+        return brewery_id;
     }
 
-    public void setBreweryId(Long breweryId) {
-        this.breweryId = breweryId;
+    public void setBrewery_id(Long brewery_id) {
+        this.brewery_id = brewery_id;
     }
 
     public String getName() {
@@ -71,20 +78,20 @@ public class BeerDTO {
         this.name = name;
     }
 
-    public Long getCategoryId() {
-        return categoryId;
+    public Long getCat_id() {
+        return cat_id;
     }
 
-    public void setCategoryId(Long categoryId) {
-        this.categoryId = categoryId;
+    public void setCat_id(Long cat_id) {
+        this.cat_id = cat_id;
     }
 
-    public Long getStyleId() {
-        return styleId;
+    public Long getStyle_id() {
+        return style_id;
     }
 
-    public void setStyleId(Long styleId) {
-        this.styleId = styleId;
+    public void setStyle_id(Long style_id) {
+        this.style_id = style_id;
     }
 
     public float getAbv() {
@@ -155,14 +162,29 @@ public class BeerDTO {
     public Beer toBeer() {
         Beer beer = new Beer();
         beer.setId(this.id);
-        beer.setBreweryId(this.breweryId);
-        beer.setName(this.name);
-        if (this.categoryId == null) {
-            throw new IllegalArgumentException("categoryId no puede ser nulo");
-        } else {
-            beer.setCategoryId(this.categoryId);
+
+        if (this.brewery_id != null) {
+            Brewery brewery = new Brewery();
+            brewery.setId(this.brewery_id);
+            beer.setBrewery(brewery);
         }
-        beer.setStyleId(this.styleId);
+
+        beer.setName(this.name);
+
+        if (this.cat_id == null) {
+            throw new IllegalArgumentException("cat_id no puede ser nulo");
+        } else {
+            Category category = new Category();
+            category.setId(this.cat_id);
+            beer.setCategory(category);
+        }
+
+        if (this.style_id != null) {
+            Style style = new Style();
+            style.setId(this.style_id);
+            beer.setStyle(style);
+        }
+
         beer.setAbv(this.abv);
         beer.setIbu(this.ibu);
         beer.setSrm(this.srm);

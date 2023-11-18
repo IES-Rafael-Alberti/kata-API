@@ -6,7 +6,9 @@ import com.mi.appCervezas.models.Beer;
 import com.mi.appCervezas.models.Category;
 import com.mi.appCervezas.services.BeerService;
 import com.mi.appCervezas.services.CategoryService;
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +19,6 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/")
 public class BeerController {
-
 
     @Autowired
     private BeerService beerService;
@@ -38,43 +39,54 @@ public class BeerController {
     public ResponseEntity<?> addBeer(@RequestBody BeerDTO beerDTO) {
         try {
             // Validación adicional
-            validateBeerDTO(beerDTO);
-
-            // Registros detallados
-            System.out.println("BeerDTO recibido: " + beerDTO);
+            validarBeerDTO(beerDTO);
 
             // Obtener la categoría por ID utilizando el CategoryService
-            Category category = categoryService.getCategoryById(beerDTO.getCategoryId());
+            Category category = categoryService.getCategoryById(beerDTO.getCat_id());
             if (category == null) {
-                throw new IllegalArgumentException("No se encontró una categoría con el ID proporcionado: " + beerDTO.getCategoryId());
+                throw new IllegalArgumentException("No se encontró una categoría con el ID proporcionado: " + beerDTO.getCat_id());
             }
 
             // Configurar la categoría en la cerveza
             Beer beer = beerDTO.toBeer();
             beer.setCategory(category);
-            beer.setCategoryId(category.getId()); // Establecer el categoryId
-
-            System.out.println("Beer creado: " + beer);
 
             // Comprobar que breweryId no sea nulo
-            if (beer.getBreweryId() == null) {
+            if (beer.getBrewery() == null || beer.getBrewery().getId() == null) {
                 throw new IllegalArgumentException("breweryId en Beer no puede ser nulo");
             }
 
-            Beer savedBeer = beerService.addBeer(beer);
+            // Comprobar que cat_id no sea nulo en Beer antes de persistir
+            if (beer.getCategory().getId() == null) {
+                throw new IllegalArgumentException("cat_id en Beer no puede ser nulo");
+            }
+
+            Beer savedBeer = beerService.addBeer(beerDTO);
             BeerDTO savedBeerDTO = new BeerDTO(savedBeer);
             return ResponseEntity.status(HttpStatus.CREATED).body(savedBeerDTO);
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
             return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (DataIntegrityViolationException e) {
+            // Manejar la excepción de violación de integridad de datos
+            Throwable rootCause = ExceptionUtils.getRootCause(e);
+            if (rootCause != null) {
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error de integridad de datos: " + rootCause.getMessage());
+            } else {
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error de integridad de datos");
+            }
         } catch (Exception e) {
             System.err.println(e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Se produjo un error en el servidor");
         }
     }
 
-    private void validateBeerDTO(BeerDTO beerDTO) {
-        if (beerDTO.getBreweryId() == null) {
+
+
+
+
+    private void validarBeerDTO(BeerDTO beerDTO) {
+        if (beerDTO.getBrewery_id() == null) {
             throw new IllegalArgumentException("breweryId no puede ser nulo");
         }
         if (beerDTO.getName() == null || beerDTO.getName().isEmpty()) {
@@ -83,8 +95,8 @@ public class BeerController {
         if (beerDTO.getAbv() <= 0 || beerDTO.getAbv() > 100) {
             throw new IllegalArgumentException("abv debe estar entre 0 y 100");
         }
-        if (beerDTO.getCategoryId() == null) {
-            throw new IllegalArgumentException("categoryId no puede ser nulo");
+        if (beerDTO.getCat_id() == null) {
+            throw new IllegalArgumentException("cat_id no puede ser nulo");
         }
     }
 
