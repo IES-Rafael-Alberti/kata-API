@@ -6,6 +6,7 @@ import com.mi.appCervezas.models.Category;
 import com.mi.appCervezas.models.Style;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class BeerDTO {
 
@@ -13,7 +14,7 @@ public class BeerDTO {
     private Long brewery_id;
     private String name;
     private Long cat_id;
-    private Long style_id;
+    private Long style_id = 2L;
     private float abv;
     private float ibu;
     private float srm;
@@ -35,12 +36,21 @@ public class BeerDTO {
     // Constructor
     public BeerDTO(Beer beer) {
         this.id = beer.getId();
-        this.brewery_id = beer.getBrewery().getId();
+
+        if (beer.getBrewery() != null) {
+            this.brewery_id = beer.getBrewery().getId();
+        }
+
         this.name = beer.getName();
+
         if (beer.getCategory() != null) {
             this.cat_id = beer.getCategory().getId();
         }
-        this.style_id = beer.getStyle().getId();
+
+        if (beer.getStyle() != null) {
+            this.style_id = beer.getStyle().getId();
+        }
+
         this.abv = beer.getAbv();
         this.ibu = beer.getIbu();
         this.srm = beer.getSrm();
@@ -156,6 +166,30 @@ public class BeerDTO {
 
     public void setLast_mod(Date last_mod) {
         this.last_mod = last_mod;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BeerDTO beerDTO = (BeerDTO) o;
+        return upc == beerDTO.upc &&
+                add_user == beerDTO.add_user &&
+                Objects.equals(id, beerDTO.id) &&
+                Objects.equals(brewery_id, beerDTO.brewery_id) &&
+                Objects.equals(name, beerDTO.name) &&
+                Objects.equals(cat_id, beerDTO.cat_id) &&
+                Float.compare(beerDTO.abv, abv) == 0 &&
+                Float.compare(beerDTO.ibu, ibu) == 0 &&
+                Float.compare(beerDTO.srm, srm) == 0 &&
+                Objects.equals(filepath, beerDTO.filepath) &&
+                Objects.equals(descript, beerDTO.descript) &&
+                Objects.equals(last_mod, beerDTO.last_mod);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, brewery_id, name, cat_id, style_id, abv, ibu, srm, upc, filepath, descript, add_user, last_mod);
     }
 
     // Método para transformar BeerDTO a Beer

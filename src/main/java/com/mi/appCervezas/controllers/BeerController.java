@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/")
+@CrossOrigin(origins = "http://localhost:63342")
 public class BeerController {
 
     @Autowired

@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/")
+@CrossOrigin(origins = "http://localhost:4202")
 public class StyleController {
 
     @Autowired
