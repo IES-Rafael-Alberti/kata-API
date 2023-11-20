@@ -14,8 +14,6 @@ public class Category {
     private String catName;
     private Date lastMod;
 
-    // Constructor, getters y setters
-
     public Long getId() {
         return id;
     }

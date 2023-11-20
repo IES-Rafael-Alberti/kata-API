@@ -31,7 +31,7 @@ public class BeerController {
             // Actualiza otros campos si es necesario
             return beerRepository.save(existingBeer);
         }
-        return null; // Devuelve null si no se encuentra la cerveza.
+        return null; // Si no se encuentra la cerveza.
     }
     @DeleteMapping("/{id}")
     public void deleteBeer(@PathVariable Long id) {

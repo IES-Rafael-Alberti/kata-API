@@ -11,24 +11,22 @@ public class Brewery {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String phone;
+    private String website;
     private String address1;
     private String address2;
     private String city;
     private String state;
-    private String code;
+    private String postCode;
     private String country;
-    private String phone;
-    private String website;
     private String filepath;
     @Column(columnDefinition = "TEXT")
     private String descript;
-    @Column(name = "add_user")
+    @Column(name = "add-User")
     private Long addUser;
-    @Column(name = "last_mod")
+    @Column(name = "last-Mod")
     @Temporal(TemporalType.TIMESTAMP)
     private Date lastMod;
-
-    // Constructor, getters y setters
 
     public Long getId() {
         return id;

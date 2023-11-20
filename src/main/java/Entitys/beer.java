@@ -10,12 +10,12 @@ public class Beer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "brewery_id")
+    @Column(name = "brewery-Id")
     private Long breweryId;
     private String name;
-    @Column(name = "cat_id")
+    @Column(name = "cat-Id")
     private Long catId;
-    @Column(name = "style_id")
+    @Column(name = "style-Id")
     private Long styleId;
     private Double abv;
     private Double ibu;
@@ -24,9 +24,9 @@ public class Beer {
     private String filepath;
     @Column(columnDefinition = "TEXT")
     private String descript;
-    @Column(name = "add_user")
+    @Column(name = "add-User")
     private Long addUser;
-    @Column(name = "last_mod")
+    @Column(name = "last-Mod")
     @Temporal(TemporalType.TIMESTAMP)
     private Date lastMod;
 
