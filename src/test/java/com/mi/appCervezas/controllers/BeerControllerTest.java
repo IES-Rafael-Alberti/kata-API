@@ -3,7 +3,6 @@ package com.mi.appCervezas.controllers;
 import com.mi.appCervezas.dto.BeerDTO;
 import com.mi.appCervezas.models.Beer;
 import com.mi.appCervezas.services.BeerService;
-import com.mi.appCervezas.services.CategoryService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -29,9 +28,6 @@ class BeerControllerTest {
 
     @Mock
     private BeerService beerService;
-
-    @Mock
-    private CategoryService categoryService;
 
     @InjectMocks
     private BeerController beerController;

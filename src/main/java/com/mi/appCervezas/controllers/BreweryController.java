@@ -20,6 +20,11 @@ public class BreweryController {
     @Autowired
     private BreweryService breweryService;
 
+    // Constructor que acepta el servicio como parámetro
+    public BreweryController(BreweryService breweryService) {
+        this.breweryService = breweryService;
+    }
+
     @GetMapping("/breweries")
     public List<BreweryDTO> getAllBreweries() {
         List<BreweryDTO> breweryDTOs = new ArrayList<>();

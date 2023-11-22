@@ -3,6 +3,7 @@ package com.mi.appCervezas.dto;
 import com.mi.appCervezas.models.Style;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class StyleDTO extends Style {
 
@@ -52,5 +53,21 @@ public class StyleDTO extends Style {
 
     public void setLast_mod(Date last_mod) {
         this.last_mod = last_mod;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        StyleDTO that = (StyleDTO) o;
+        return Objects.equals(id, that.id) &&
+                Objects.equals(cat_id, that.cat_id) &&
+                Objects.equals(style_name, that.style_name) &&
+                Objects.equals(last_mod, that.last_mod);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, cat_id, style_name, last_mod);
     }
 }

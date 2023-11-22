@@ -3,6 +3,7 @@ package com.mi.appCervezas.dto;
 import com.mi.appCervezas.models.Brewery;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class BreweryDTO extends Brewery {
 
@@ -152,4 +153,31 @@ public class BreweryDTO extends Brewery {
     public void setLast_mod(Date last_mod) {
         this.last_mod = last_mod;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BreweryDTO that = (BreweryDTO) o;
+        return add_user == that.add_user &&
+                Objects.equals(id, that.id) &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(address1, that.address1) &&
+                Objects.equals(address2, that.address2) &&
+                Objects.equals(city, that.city) &&
+                Objects.equals(state, that.state) &&
+                Objects.equals(code, that.code) &&
+                Objects.equals(country, that.country) &&
+                Objects.equals(phone, that.phone) &&
+                Objects.equals(website, that.website) &&
+                Objects.equals(filepath, that.filepath) &&
+                Objects.equals(descript, that.descript) &&
+                Objects.equals(last_mod, that.last_mod);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, address1, address2, city, state, code, country, phone, website, filepath, descript, add_user, last_mod);
+    }
+
 }
