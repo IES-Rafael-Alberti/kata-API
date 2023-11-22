@@ -1,8 +1,11 @@
 package com.mi.appCervezas.controllers;
 
 import com.mi.appCervezas.dto.BeerDTO;
+import com.mi.appCervezas.dto.CategoryDTO;
 import com.mi.appCervezas.models.Beer;
+import com.mi.appCervezas.models.Category;
 import com.mi.appCervezas.services.BeerService;
+import com.mi.appCervezas.services.CategoryService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -18,13 +21,16 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
+import static com.mi.appCervezas.controllers.CategoryControllerTest.crearCategory;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.*;
-
-//import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
 class BeerControllerTest {
+
+    @Mock
+    CategoryService categoryService;
 
     @Mock
     private BeerService beerService;
@@ -51,12 +57,11 @@ class BeerControllerTest {
 
     @Test
     void addBeer() {
-
         // Configurar datos simulados
         BeerDTO beerDTO = new BeerDTO();
         beerDTO.setBrewery_id(1L);
         beerDTO.setName("Lager");
-        beerDTO.setCat_id(3L);
+        beerDTO.setCat_id(1L);
         beerDTO.setAbv(6);
         beerDTO.setIbu(8);
         beerDTO.setSrm(10);
@@ -73,21 +78,30 @@ class BeerControllerTest {
         }
         beerDTO.setLast_mod(lastModDate);
 
-        ResponseEntity<String> expectedResponse = ResponseEntity.status(HttpStatus.CREATED).body("beer added");
+        // Configurar comportamiento simulado del servicio de categoría
+        Category category = crearCategory(1L, "Category Prueba", new Date());
+        CategoryDTO mockCategory = new CategoryDTO(category);
 
-        // Configurar comportamiento simulado del servicio
+        when(categoryService.getCategoryById(1L)).thenReturn(mockCategory);
+
+        // Configurar comportamiento simulado del servicio de cerveza
         when(beerService.addBeer(any())).thenReturn(new Beer());
 
         // Llamar al método del controlador
         ResponseEntity<?> result = beerController.addBeer(beerDTO);
 
-        // Verificar el resultado
-        assertEquals(expectedResponse.getStatusCode(), result.getStatusCode());
+        // Comprobar el resultado
+        assertEquals(HttpStatus.CREATED, result.getStatusCode());
+        assertNotNull(result.getBody()); // Comprobar que el cuerpo de la respuesta no es nulo
 
-        // Verificar que se llamó al servicio
+        // Comprobar que se llamó al servicio de cerveza
         verify(beerService, times(1)).addBeer(any());
 
+        // Comprobar que se llamó al servicio de categoría con el ID correcto
+        verify(categoryService, times(1)).getCategoryById(1L);
     }
+
+
 
     @Test
     void getBeerById() {

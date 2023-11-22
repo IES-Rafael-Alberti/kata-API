@@ -14,7 +14,7 @@ public class BeerDTO {
     private Long brewery_id;
     private String name;
     private Long cat_id;
-    private Long style_id = 2L;
+    private Long style_id;
     private float abv;
     private float ibu;
     private float srm;

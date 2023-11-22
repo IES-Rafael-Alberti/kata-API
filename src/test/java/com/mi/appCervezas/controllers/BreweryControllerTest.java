@@ -17,8 +17,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
-
-
 @ExtendWith(MockitoExtension.class)
 class BreweryControllerTest {
 
@@ -77,7 +75,6 @@ class BreweryControllerTest {
     }
 
 
-
     @Test
     void getBreweryById() {
         // Configurar datos simulados
@@ -111,9 +108,5 @@ class BreweryControllerTest {
         // Verificar que se llamó al servicio
         verify(breweryService, times(1)).getBreweryById(breweryId);
     }
-
-
-
-
 
 }

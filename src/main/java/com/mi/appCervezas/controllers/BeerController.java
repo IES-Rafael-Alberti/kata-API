@@ -27,6 +27,12 @@ public class BeerController {
     @Autowired
     private CategoryService categoryService;
 
+    @Autowired
+    public BeerController(BeerService beerService, CategoryService categoryService) {
+        this.beerService = beerService;
+        this.categoryService = categoryService;
+    }
+
 
     @GetMapping("/beers")
     public List<BeerDTO> getAllBeers() {
