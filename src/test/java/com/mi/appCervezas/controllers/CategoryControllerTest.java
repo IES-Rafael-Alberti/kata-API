@@ -1,9 +1,7 @@
 package com.mi.appCervezas.controllers;
 
 import com.mi.appCervezas.dto.CategoryDTO;
-import com.mi.appCervezas.models.Brewery;
 import com.mi.appCervezas.models.Category;
-import com.mi.appCervezas.repositories.CategoryRepository;
 import com.mi.appCervezas.services.CategoryService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
