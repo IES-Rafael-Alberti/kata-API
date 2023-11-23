@@ -1,5 +1,8 @@
 package com.example.kataAPI.controller;
 
+import com.example.kataAPI.errors.custom_exceptions.Beer_exist;
+import com.example.kataAPI.errors.custom_exceptions.Not_found_beer;
+import com.example.kataAPI.errors.custom_exceptions.Not_found_exception;
 import com.example.kataAPI.model.Beer;
 import com.example.kataAPI.repo.repo_beer;
 import org.springframework.http.ResponseEntity;
@@ -21,12 +24,20 @@ public class Controller_beers {
     @GetMapping("/beers") // Muestra todas las cervezas	GET
     @ResponseBody
     public List<Beer> get_all_beers(){
-        return repo_beer.findAll();
+        List <Beer> all_beers = repo_beer.findAll();
+        if (all_beers.isEmpty()) {
+            return all_beers;
+        }
+        else  {
+            throw new Not_found_exception("No data were found");
+        }
     }
-    @GetMapping("/beer/{id}") // Mostrar la cerveza con el id {id}	GET
+
+    @GetMapping("/beer/{id}") // Mostrar la cerveza por el id {id}	GET
     @ResponseBody
     public Beer get_beer(@PathVariable Integer id){
-        return repo_beer.findById(id).orElse(null);
+        return repo_beer.findById(id)
+                .orElseThrow(()-> new Not_found_beer("Beer with id "+id+" didn´t found"));
     }
 
     @PostMapping("/beer")
@@ -37,36 +48,33 @@ public class Controller_beers {
             repo_beer.save(beer);
             return ResponseEntity.ok(beer);
         }
-        throw new Beer_exist(); implementar
+        else {
+            throw new Beer_exist("This beer already exist");
 
+        }
     }
 
     @DeleteMapping("/beer/{id}") // Eliminar una cerveza DELETE
     @ResponseBody
-    public ResponseEntity<Beer> delete_beer (@PathVariable Integer id) {
+    public ResponseEntity<String> delete_beer (@PathVariable Integer id) {
         return repo_beer.findById(id)
                 .map(beer -> {
                     repo_beer.delete(beer);
                     return ResponseEntity.ok().body("Producto deleted");
                 })
-                .orElseThrow(() -> new ResourceNotFoundException("Beer not found with id " + id));
+                .orElseThrow(()-> new Not_found_beer("Beer with id "+id+" didn´t found"));
     }
 
     @PutMapping("/beer/{id}")  // Modificar parcialmente una cerveza PUT o PATCH
     @ResponseBody
-    public ResponseEntity<Beer> update_beer (@PathVariable Integer id @Valid @RequestBody Beer beer) {
-        return repo_beer.findById(id)
-                .map(existing_beer -> {
-                    existing_beer.setName(existing_beer.getName());
-                    existing_beer.setAbv(existing_beer.getAbv());
-                    existing_beer.setIbu(existing_beer.getIbu());
-                    existing_beer.setSrm(existing_beer.getSrm());
-                    existing_beer.setUpc(existing_beer.getUpc());
-                    existing_beer.setFilepath(existing_beer.getFilepath());
-                    existing_beer.setDescript(existing_beer.getDescript());
-                    return repo_beer.save(existing_beer);
+    public ResponseEntity<Beer> update_beer (@PathVariable Integer id, @Valid @RequestBody Beer beer) {
+        return repo_beer.findById(id).map(existing_beer -> {
+                    existing_beer.setName(beer.getName());
+                    existing_beer.setDescript(beer.getDescript());
+                    repo_beer.save(existing_beer);
+                    return ResponseEntity.ok(existing_beer);
                 })
-                .orElseThrow(() -> new NotFoundException("Beer not found with id " + id));
+                .orElseThrow(()-> new Not_found_beer("Beer with id "+id+" didn´t found"));
     }
 
 }
