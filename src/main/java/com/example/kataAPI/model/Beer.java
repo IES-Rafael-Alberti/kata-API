@@ -1,4 +1,4 @@
-package com.example.kataAPI.entity;
+package com.example.kataAPI.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

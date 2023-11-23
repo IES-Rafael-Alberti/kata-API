@@ -1,4 +1,4 @@
-package com.example.kataAPI.entity;
+package com.example.kataAPI.model;
 
 import java.util.Date;
 import jakarta.persistence.*;
