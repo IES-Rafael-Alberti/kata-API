@@ -25,7 +25,7 @@ public class Controller_beers {
     @ResponseBody
     public List<Beer> get_all_beers(){
         List <Beer> all_beers = repo_beer.findAll();
-        if (all_beers.isEmpty()) {
+        if (!all_beers.isEmpty()) {
             return all_beers;
         }
         else  {
