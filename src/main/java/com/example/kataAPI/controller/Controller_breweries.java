@@ -1,5 +1,6 @@
 package com.example.kataAPI.controller;
 
+import com.example.kataAPI.errors.custom_exceptions.Not_found_exception;
 import com.example.kataAPI.model.Brewery;
 import com.example.kataAPI.repo.repo_brewery;
 import org.springframework.web.bind.annotation.*;
@@ -16,11 +17,20 @@ public class Controller_breweries {
     }
     @GetMapping("/breweries")// Listar todas las cerveceras	GET
     @ResponseBody
-    public List<Brewery> get_all_breweries() { return repo_brewery.findAll(); }
+    public List<Brewery> get_all_breweries() {
+        List<Brewery> all_breweries= repo_brewery.findAll();
+      if (!all_breweries.isEmpty()) {
+          return all_breweries;
+      }
+      else {
+          throw new Not_found_exception("No data for breweries were found");
+      }
+    }
 
     @GetMapping("/brewerie/{id}")// Mostrar la cervecera {id}	GET
     @ResponseBody
     public Brewery get_brewery(@PathVariable Integer id) {
-        return repo_brewery.findById(id).orElse(null);
+        return repo_brewery.findById(id)
+                            .orElseThrow(() -> new Not_found_exception("The brewery with id "+ id + " wasn't found"));
     }
 }
