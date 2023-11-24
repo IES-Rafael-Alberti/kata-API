@@ -36,7 +36,7 @@ class StyleControllerTest {
 
     @Test
     void getAllStyles() {
-        // Configurar el comportamiento simulado del servicio
+        // Configurar el comportamiento simulado del servicio.
         Style style1 = crearStyle(1L, 1, "Style1", new Date());
         Style style2 = crearStyle(2L, 1, "Style2", new Date());
 
@@ -52,7 +52,7 @@ class StyleControllerTest {
         ResponseEntity<Page<StyleDTO>> result = styleController.getAllStyles(0, 5, "id");
 
 
-        // Verificar el resultado
+        // Verificar el resultado.
         assertEquals(mockStyles.size(), Objects.requireNonNull(result.getBody()).getContent().size());
 
         // Verificar que se llamó al servicio
