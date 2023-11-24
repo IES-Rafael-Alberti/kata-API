@@ -1,0 +1,15 @@
+{
+  "id": 2,
+  "breweryId": 1,
+  "name": "Grimbergen Blonde",
+  "categoryId": 1,
+  "styleId": 1,
+  "abv": 6.7,
+  "ibu": 0.0,
+  "srm": 0.0,
+  "upc": 0,
+  "filepath": "",
+  "descript": "",
+  "add_user": 0,
+  "last_mod": "2010-07-22T18:00:20.000+00:00"
+}

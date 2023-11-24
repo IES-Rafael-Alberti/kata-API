@@ -1,0 +1,109 @@
+{
+  "content": [
+    {
+      "id": 1,
+      "name": "(512) Brewing Company",
+      "address1": "407 Radam, F200",
+      "address2": "",
+      "city": "Austin",
+      "state": "Texas",
+      "code": "78745",
+      "country": "United States",
+      "phone": "512.707.2337",
+      "website": "http://512brewing.com/",
+      "filepath": "",
+      "descript": "(512) Brewing Company is a microbrewery located in the heart of Austin that brews for the community using as many local, domestic and organic ingredients as possible.",
+      "add_user": 0,
+      "last_mod": "2010-07-22T18:00:20.000+00:00"
+    },
+    {
+      "id": 2,
+      "name": "21st Amendment Brewery Cafe",
+      "address1": "563 Second Street",
+      "address2": "",
+      "city": "San Francisco",
+      "state": "California",
+      "code": "94107",
+      "country": "United States",
+      "phone": "1-415-369-0900",
+      "website": "http://www.21st-amendment.com/",
+      "filepath": "",
+      "descript": "The 21st Amendment Brewery offers a variety of award winning house made brews and American grilled cuisine in a comfortable loft like setting. Join us before and after Giants baseball games in our outdoor beer garden. A great location for functions and parties in our semi-private Brewers Loft. See you soon at the 21A!",
+      "add_user": 0,
+      "last_mod": "2010-10-24T11:54:07.000+00:00"
+    },
+    {
+      "id": 3,
+      "name": "3 Fonteinen Brouwerij Ambachtelijke Geuzestekerij",
+      "address1": "Hoogstraat 2A",
+      "address2": "",
+      "city": "Beersel",
+      "state": "Vlaams Brabant",
+      "code": "",
+      "country": "Belgium",
+      "phone": "32-02-/-306-71-03",
+      "website": "http://www.3fonteinen.be/index.htm",
+      "filepath": "",
+      "descript": "",
+      "add_user": 0,
+      "last_mod": "2010-07-22T18:00:20.000+00:00"
+    },
+    {
+      "id": 4,
+      "name": "Aass Brewery",
+      "address1": "Ole Steensgt. 10 Postboks 1530",
+      "address2": "",
+      "city": "Drammen",
+      "state": "",
+      "code": "",
+      "country": "Norway",
+      "phone": "47-32-26-60-00",
+      "website": "http://www.aass.no",
+      "filepath": "",
+      "descript": "Aass Brewery was established in 1834 and is the oldest brewery in Norway today. It is located in the city of Drammen, approximately 25 miles south of our capital, Oslo. You will spot it at the banks of the Drammen River at the very same place as it has been since 1834. The annual production of beer is aprox. 10 mill liter (85 000 barrels), and together with the production of 18 mill liters of soft drinks and mineralwater it gives employment to approximately 150 people.  You may wonder how we got our name ? It was a young fellow with the name Poul Lauritz Aass that bought the brewery in 1860. Since then it has been in the same family, and is today run by the 4th generation of Aass. (By the way - A real Norwegian viking would pronounce it Ouse)  The brewery is proud of its history. To us the quality of what we produce has always been and always will be the main issue. In 1516, Duke Wilhelm of Bavaria established a law admitting only malted barley, hops yeast, and water as ingredients in the production of beer. The law is known as the purity law and Aass Brewery is still loyal to Duke Wilhelm of Bavaria. In Norway the brewery is known for outstanding quality and large number of different beer types.",
+      "add_user": 0,
+      "last_mod": "2010-07-22T18:00:20.000+00:00"
+    },
+    {
+      "id": 5,
+      "name": "Abbaye de Leffe",
+      "address1": "Dinant",
+      "address2": "",
+      "city": "Dinant",
+      "state": "Namur",
+      "code": "",
+      "country": "Belgium",
+      "phone": "",
+      "website": "",
+      "filepath": "",
+      "descript": "",
+      "add_user": 0,
+      "last_mod": "2010-07-22T18:00:20.000+00:00"
+    }
+  ],
+  "pageable": {
+    "pageNumber": 0,
+    "pageSize": 5,
+    "sort": {
+      "empty": true,
+      "sorted": false,
+      "unsorted": true
+    },
+    "offset": 0,
+    "unpaged": false,
+    "paged": true
+  },
+  "last": false,
+  "totalElements": 1414,
+  "totalPages": 283,
+  "size": 5,
+  "number": 0,
+  "sort": {
+    "empty": true,
+    "sorted": false,
+    "unsorted": true
+  },
+  "numberOfElements": 5,
+  "first": true,
+  "empty": false
+}
