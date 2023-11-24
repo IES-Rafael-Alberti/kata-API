@@ -13,10 +13,12 @@ public class StyleDTO extends Style {
     private Date last_mod;
 
     public StyleDTO(Style style) {
-        this.id = style.getId();
-        this.cat_id = style.getCat_id();
-        this.style_name = style.getStyle_name();
-        this.last_mod = style.getLast_mod();
+        if (style != null) {
+            this.id = style.getId();
+            this.cat_id = style.getCat_id();
+            this.style_name = style.getStyle_name();
+            this.last_mod = style.getLast_mod();
+        }
     }
 
     // Constructores, si es necesario

@@ -17,6 +17,11 @@ public class StyleService {
     @Autowired
     private StyleRepository styleRepository;
 
+    @Autowired
+    public StyleService(StyleRepository styleRepository) {
+        this.styleRepository = styleRepository;
+    }
+
     public Page<Style> getAllStyles(Pageable pageable) {
         return styleRepository.findAll(pageable);
     }

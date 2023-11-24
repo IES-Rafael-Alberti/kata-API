@@ -3,14 +3,10 @@
 GET http://localhost:8080/beers
 
 
-
-
-
-
 ### Funciona: Se le pasa los datos de la cerveza que queremos agregar a la lista de cervezas
-POST http://localhost:8080/beer
-
+POST http://localhost:8080/beer HTTP/1.1
 Content-Type: application/json
+
 {
     "brewery_id": 2,
     "name": "Lager del Mar",
@@ -28,24 +24,63 @@ Content-Type: application/json
 
 
 
+### Prueba para ver que no se puede crear una cerveza nueva ya que le pasamos un id de categoria que no esta en la base de datos
+POST http://localhost:8080/beer HTTP/1.1
+Content-Type: application/json
+
+{
+    "brewery_id": 40000,
+    "name": "Ale",
+    "cat_id": 20000,
+    "style_id": 20000,
+    "abv": 4.5,
+    "ibu": 20.0,
+    "srm": 10.0,
+    "upc": 987654321,
+    "filepath": "",
+    "descript": "Una cerveza de tipo lager con un toque marino, refrescante y ligera, perfecta para los días de verano.",
+    "add_user": 2000,
+    "last_mod": "2023-11-30T12:00:00.000+00:00"
+}
 
 
 ### Funciona: Recupera la información sobre una cerveza con id el cual le pasamos
 GET http://localhost:8080/beer/2
 
-
+### Prueba para intentar recuperar la info de una cerveza con un id que no existe en la base de datos
+GET http://localhost:8080/beer/200000
 
 
 ### Funciona: (se le pasa el id de la cerveza que queremos eliminar de la base de datos)
 DELETE http://localhost:8080/beer/9
 
-
+### Prueba con un id de cerveza que no existe en la base de datos
+DELETE http://localhost:8080/beer/8000
 
 
 ### Funciona: Se le pasa el id de la cerveza que queremos actualizar de la base de datos y los datos nuevos a modificar
-PUT http://localhost:8080/beer/4
-
+PUT http://localhost:8080/beer/4 HTTP/1.1
 Content-Type: application/json
+
+{
+    "brewery_id": 1,
+    "name": "Magic Ale",
+    "cat_id": 2,
+    "style_id": 3,
+    "abv": 9.5,
+    "ibu": 20.0,
+    "srm": 6.0,
+    "upc": 0,
+    "filepath": "",
+    "descript": "",
+    "add_user": 0,
+    "last_mod": "2023-10-30T12:00:00.000+00:00"
+}
+
+### Prueba para intentar actualizar una cerveza por id con uno que no se encuentra en la base de datos
+PUT http://localhost:8080/beer/6000 HTTP/1.1
+Content-Type: application/json
+
 {
     "brewery_id": 1,
     "name": "Magic Ale",
@@ -62,21 +97,15 @@ Content-Type: application/json
 }
 
 
-
-
-// Peticiones Brewery
-
 ### Funciona: Recupera información sobre todas las cervecerías almacenadas
 GET http://localhost:8080/breweries
-
-
 
 
 ### Funciona: Recupera la información sobre una cervecería con id que le pasamos
 GET http://localhost:8080/brewery/4
 
-
-
+### Prueba para intentar recuperar la info de una cervecería con un id que no se encuentra en la base de datos
+GET http://localhost:8080/brewery/5000
 
 
 // Peticiones Category
@@ -85,13 +114,11 @@ GET http://localhost:8080/brewery/4
 GET http://localhost:8080/categories
 
 
-
-
-
 ### Funciona: Le pedimos que nos devuelva la información de una categoría con el id que le pasemos
 GET http://localhost:8080/category/6
 
-
+### Prueba para intentar recuperar la info de una categoría con un id que no existe en la base de datos
+GET http://localhost:8080/category/7890
 
 
 // Peticiones Style
@@ -100,11 +127,11 @@ GET http://localhost:8080/category/6
 GET http://localhost:8080/styles
 
 
-
-
-
 ### Funciona: Le pedimos que nos devuelva la información del estilo de cerveza con el id que le pasemos
 GET http://localhost:8080/style/4
+
+### Prueba para intentar recuperar la info de un estilo de cerveza con un id que no existe en la base de datos
+GET http://localhost:8080/style/5789
 
 
 
