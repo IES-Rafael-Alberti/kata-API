@@ -4,6 +4,8 @@ import com.mi.appCervezas.dto.CategoryDTO;
 import com.mi.appCervezas.models.Category;
 import com.mi.appCervezas.repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,16 +17,10 @@ public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    public List<CategoryDTO> getAllCategories() {
-        List<CategoryDTO> categoryDTOs = new ArrayList<>();
-        List<Category> categories = categoryRepository.findAll();
-
-        for (Category category : categories) {
-            categoryDTOs.add(new CategoryDTO(category));
-        }
-
-        return categoryDTOs;
+    public Page<Category> getAllCategories(Pageable pageable) {
+        return categoryRepository.findAll(pageable);
     }
+
 
     public CategoryDTO getCategoryById(Long id) {
         Category category = categoryRepository.findById(id).orElse(null);

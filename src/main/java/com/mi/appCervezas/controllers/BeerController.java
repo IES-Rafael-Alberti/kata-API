@@ -9,6 +9,10 @@ import com.mi.appCervezas.services.CategoryService;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +22,6 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/")
-@CrossOrigin(origins = "http://localhost:63342")
 public class BeerController {
 
     @Autowired
@@ -33,14 +36,21 @@ public class BeerController {
         this.categoryService = categoryService;
     }
 
-
     @GetMapping("/beers")
-    public List<BeerDTO> getAllBeers() {
-        List<Beer> beers = beerService.getAllBeers();
-        return beers.stream()
+    public ResponseEntity<Page<BeerDTO>> getAllBeers(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+
+        Pageable pageable = PageRequest.of(page, size);
+        Page<Beer> beerPage = beerService.getAllBeers(pageable);
+
+        List<BeerDTO> beerDTOList = beerPage.getContent().stream()
                 .map(BeerDTO::new)
                 .collect(Collectors.toList());
+
+        return ResponseEntity.ok(new PageImpl<>(beerDTOList, pageable, beerPage.getTotalElements()));
     }
+
 
     @PostMapping("/beer")
     public ResponseEntity<?> addBeer(@RequestBody BeerDTO beerDTO) {

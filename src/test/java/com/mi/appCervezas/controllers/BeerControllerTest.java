@@ -11,6 +11,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -40,19 +43,21 @@ class BeerControllerTest {
 
     @Test
     void getAllBeers() {
-
         // Configurar el comportamiento simulado del servicio
         List<Beer> mockBeers = Arrays.asList(new Beer(), new Beer());
-        when(beerService.getAllBeers()).thenReturn(mockBeers);
+        Page<Beer> mockBeerPage = new PageImpl<>(mockBeers);
+
+        when(beerService.getAllBeers(any(Pageable.class))).thenReturn(mockBeerPage);
 
         // Llamar al método del controlador
-        List<BeerDTO> result = beerController.getAllBeers();
+        ResponseEntity<Page<BeerDTO>> result = beerController.getAllBeers(0, 5);
 
         // Verificar el resultado
-        assertEquals(mockBeers.size(), result.size());
+        assertEquals(HttpStatus.OK, result.getStatusCode());
+        assertEquals(mockBeers.size(), Objects.requireNonNull(result.getBody()).getContent().size());
 
-        // Verificar que se llamó al servicio
-        verify(beerService, times(1)).getAllBeers();
+        // Verificar que se llamó al servicio con los parámetros de paginación correctos
+        verify(beerService, times(1)).getAllBeers(any(Pageable.class));
     }
 
     @Test

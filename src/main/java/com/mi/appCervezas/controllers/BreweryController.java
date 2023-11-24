@@ -5,16 +5,20 @@ import com.mi.appCervezas.error.BreweryNotFoundException;
 import com.mi.appCervezas.models.Brewery;
 import com.mi.appCervezas.services.BreweryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/")
-@CrossOrigin(origins = "http://localhost:3000")
 public class BreweryController {
 
     @Autowired
@@ -25,16 +29,20 @@ public class BreweryController {
         this.breweryService = breweryService;
     }
 
+
     @GetMapping("/breweries")
-    public List<BreweryDTO> getAllBreweries() {
-        List<BreweryDTO> breweryDTOs = new ArrayList<>();
-        List<BreweryDTO> breweries = breweryService.getAllBreweries();
+    public ResponseEntity<Page<BreweryDTO>> getAllBreweries(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "5") int size) {
 
-        for (BreweryDTO brewery : breweries) {
-            breweryDTOs.add(new BreweryDTO(brewery));
-        }
+        Pageable pageable = PageRequest.of(page, size);
+        Page<Brewery> breweryPage = breweryService.getAllBreweries(pageable);
 
-        return breweryDTOs;
+        List<BreweryDTO> breweryDTOList = breweryPage.getContent().stream()
+                .map(BreweryDTO::new)
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok(new PageImpl<>(breweryDTOList, pageable, breweryPage.getTotalElements()));
     }
 
 

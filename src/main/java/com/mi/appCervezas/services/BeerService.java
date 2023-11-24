@@ -14,6 +14,8 @@ import com.mi.appCervezas.repositories.BreweryRepository;
 import com.mi.appCervezas.repositories.CategoryRepository;
 import com.mi.appCervezas.repositories.StyleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -34,8 +36,8 @@ public class BeerService {
     @Autowired
     private StyleRepository styleRepository;
 
-    public List<Beer> getAllBeers() {
-        return beerRepository.findAll();
+    public Page<Beer> getAllBeers(Pageable pageable) {
+        return beerRepository.findAll(pageable);
     }
 
     public Beer getBeerById(Long id) {

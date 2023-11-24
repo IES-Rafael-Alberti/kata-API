@@ -8,14 +8,20 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -33,18 +39,28 @@ class CategoryControllerTest {
         Category category1 = crearCategory(1L, "Category1", new Date());
         Category category2 = crearCategory(2L, "Category2", new Date());
 
-        List<CategoryDTO> mockCategories = Arrays.asList(new CategoryDTO(category1), new CategoryDTO(category2));
-        when(categoryService.getAllCategories()).thenReturn(mockCategories);
+        List<Category> mockCategories = Arrays.asList(category1, category2);
+
+        // Ajustar el retorno simulado para que sea un Page<Category>
+        Page<Category> mockCategoryPage = new PageImpl<>(mockCategories);
+
+        // Utilizar any() para simular cualquier Pageable
+        when(categoryService.getAllCategories(any(Pageable.class))).thenReturn(mockCategoryPage);
 
         // Llamar al método del controlador
-        List<CategoryDTO> result = categoryController.getAllCategories();
+        ResponseEntity<Page<CategoryDTO>> result = categoryController.getAllCategories(0, 5);
+
 
         // Verificar el resultado
-        assertEquals(mockCategories.size(), result.size());
+        assertEquals(mockCategories.size(), Objects.requireNonNull(result.getBody()).getContent().size());
 
         // Verificar que se llamó al servicio
-        verify(categoryService, times(1)).getAllCategories();
+        verify(categoryService, times(1)).getAllCategories(any(Pageable.class));
     }
+
+
+
+
 
     public static Category crearCategory(Long id, String cat_name, Date last_mod) {
 

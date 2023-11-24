@@ -4,6 +4,8 @@ import com.mi.appCervezas.dto.StyleDTO;
 import com.mi.appCervezas.models.Style;
 import com.mi.appCervezas.repositories.StyleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,16 +17,8 @@ public class StyleService {
     @Autowired
     private StyleRepository styleRepository;
 
-    public List<StyleDTO> getAllStyles() {
-        List<Style> styles = styleRepository.findAll();
-        List<StyleDTO> styleDTOs = new ArrayList<>();
-
-        for (Style style : styles) {
-            styleDTOs.add(new StyleDTO(style));
-
-        }
-
-        return styleDTOs;
+    public Page<Style> getAllStyles(Pageable pageable) {
+        return styleRepository.findAll(pageable);
     }
 
     public Style getStyleById(Long id) {

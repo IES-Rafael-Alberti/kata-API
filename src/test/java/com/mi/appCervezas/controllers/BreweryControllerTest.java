@@ -5,14 +5,19 @@ import com.mi.appCervezas.models.Brewery;
 import com.mi.appCervezas.services.BreweryService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
@@ -29,27 +34,29 @@ class BreweryControllerTest {
     @Test
     void getAllBreweries() {
         // Configurar el comportamiento simulado del servicio
+        Page<Brewery> mockBreweries = new PageImpl<>(Arrays.asList(
+                crearBrewery(1L, "Brewery One", "123 Main Street", "Suite 100",
+                        "Cityville", "Stateville", "12345", "Countryland", "555-1234", "", "", "A fantastic brewery in Cityville.", 1),
+                crearBrewery(2L, "Brewery Two", "456 Oak Avenue", "Floor 2",
+                        "Townton", "Stateland", "67890", "Countryville", "555-5678", "", "", "A unique brewery in Townton.", 2)));
 
-        Brewery brewery1 = crearBrewery(1L, "Brewery One", "123 Main Street", "Suite 100",
-                "Cityville", "Stateville", "12345", "Countryland", "555-1234", "", "", "A fantastic brewery in Cityville.", 1);
-
-        Brewery brewery2 = crearBrewery(2L, "Brewery Two", "456 Oak Avenue", "Floor 2",
-                "Townton", "Stateland", "67890", "Countryville", "555-5678", "", "", "A unique brewery in Townton.", 2);
-
-
-        List<BreweryDTO> mockBreweries = Arrays.asList(new BreweryDTO(brewery1), new BreweryDTO(brewery2));
-        when(breweryService.getAllBreweries()).thenReturn(mockBreweries);
-
+        when(breweryService.getAllBreweries(any(Pageable.class))).thenReturn(mockBreweries);
 
         // Llamar al método del controlador
-        List<BreweryDTO> result = breweryController.getAllBreweries();
+        ResponseEntity<Page<BreweryDTO>> result = breweryController.getAllBreweries(0, 5);
 
         // Verificar el resultado
-        assertEquals(mockBreweries.size(), result.size());
+        assertEquals(mockBreweries.getTotalElements(), Objects.requireNonNull(result.getBody()).getTotalElements());
 
-        // Verificar que se llamó al servicio
-        verify(breweryService, times(1)).getAllBreweries();
+        // Verificar que se llamó al servicio con los parámetros de paginación correctos
+        ArgumentCaptor<Pageable> pageableCaptor = ArgumentCaptor.forClass(Pageable.class);
+        verify(breweryService, times(1)).getAllBreweries(pageableCaptor.capture());
+
+        Pageable pageableUsed = pageableCaptor.getValue();
+        assertEquals(0, pageableUsed.getPageNumber());
+        assertEquals(5, pageableUsed.getPageSize());
     }
+
 
     public static Brewery crearBrewery(Long id, String name, String address1, String address2, String city,
                                         String state, String code, String country, String phone, String website,
