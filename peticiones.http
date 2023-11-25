@@ -52,7 +52,7 @@ GET http://localhost:8080/beer/200000
 
 
 ### Funciona: (se le pasa el id de la cerveza que queremos eliminar de la base de datos)
-DELETE http://localhost:8080/beer/9
+DELETE http://localhost:8080/beer/32
 
 ### Prueba con un id de cerveza que no existe en la base de datos
 DELETE http://localhost:8080/beer/8000
