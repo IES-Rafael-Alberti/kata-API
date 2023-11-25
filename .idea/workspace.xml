@@ -4,71 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54efa3af-9e0c-42da-a09c-e2f76970bd56" name="Changes" comment="Comprobando subida push">
+    <list default="true" id="54efa3af-9e0c-42da-a09c-e2f76970bd56" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/25151eb3-451f-4026-8142-8223e3b6a93d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/25151eb3-451f-4026-8142-8223e3b6a93d.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/25151eb3-451f-4026-8142-8223e3b6a93d/storage_v2/_src_/schema/pruebaspringboot.EJFvtQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/25151eb3-451f-4026-8142-8223e3b6a93d/storage_v2/_src_/schema/pruebaspringboot.EJFvtQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-14T202725.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-14T202733.404.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-14T202751.404.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-14T203227.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-14T203237.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-14T203251.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-14T204854.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-14T204925.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-14T205635.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-14T205652.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-14T205848.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-16T173636.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-16T173647.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-16T173656.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-16T173703.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-16T173711.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-16T173715.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-16T173721.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-16T173725.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-20T085333.404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-20T085443.404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-20T085446.404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-20T085449.404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-20T085548.404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-20T090704.404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-20T090707.404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-20T090709.404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-20T090738.301.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-20T090746.301.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-20T090906.404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-20T090953.404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-20T091037.404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-22T210525.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-22T210746.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-22T210900.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-22T210957.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-22T211002.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-22T211132.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-22T211504.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-24T081405.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-24T081708.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-24T081715.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-24T082154.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-24T082235.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-24T082326.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-24T082507.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-24T083533.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-24T083924.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-11-24T091627.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/peticiones.http" beforeDir="false" afterPath="$PROJECT_DIR$/peticiones.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/controllers/BeerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/controllers/BeerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/controllers/StyleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/controllers/StyleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/dto/StyleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/dto/StyleDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/controllers/BreweryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/controllers/BreweryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/controllers/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/controllers/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/repositories/BreweryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/repositories/BreweryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/repositories/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/repositories/CategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/repositories/StyleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/repositories/StyleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/BeerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/BeerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/BreweryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/BreweryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/CategoryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/StyleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/StyleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mi/appCervezas/controllers/BeerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mi/appCervezas/controllers/BeerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mi/appCervezas/controllers/StyleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mi/appCervezas/controllers/StyleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mi/appCervezas/dto/StyleDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mi/appCervezas/dto/StyleDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mi/appCervezas/services/StyleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mi/appCervezas/services/StyleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mi/appCervezas/controllers/BreweryControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mi/appCervezas/controllers/BreweryControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mi/appCervezas/controllers/CategoryControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mi/appCervezas/controllers/CategoryControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,18 +136,54 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="HTTP Request.peticiones | Prueba para ver que no se puede crear una cerveza nueva ya que le pasamos un id de categoria que no esta en la base de datos">
-    <configuration name="All in peticiones" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/peticiones.http">
+  <component name="RunManager" selected="JUnit.StyleControllerTest">
+    <configuration name="peticiones | Prueba para intentar actualizar una cerveza por id con uno que no se encuentra en la base de datos" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/peticiones.http" index="9" requestIdentifier="Prueba para intentar actualizar una cerveza por id con uno que no se encuentra en la base de datos" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="peticiones | Funciona: Se le pasa los datos de la cerveza que queremos agregar a la lista de cervezas" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/peticiones.http" index="2" requestIdentifier="Funciona: Se le pasa los datos de la cerveza que queremos agregar a la lista de cervezas" runType="Run single request">
-      <method v="2" />
+    <configuration name="BeerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="appDeCervezas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mi.appCervezas.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mi.appCervezas.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.mi.appCervezas.controllers.BeerControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="peticiones | Prueba para intentar recuperar la info de un estilo de cerveza con un id que no existe en la base de datos" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/peticiones.http" index="18" requestIdentifier="Prueba para intentar recuperar la info de un estilo de cerveza con un id que no existe en la base de datos" runType="Run single request">
-      <method v="2" />
+    <configuration name="BreweryControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="appDeCervezas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mi.appCervezas.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mi.appCervezas.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.mi.appCervezas.controllers.BreweryControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="peticiones | Prueba para ver que no se puede crear una cerveza nueva ya que le pasamos un id de categoria que no esta en la base de datos" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/peticiones.http" index="3" requestIdentifier="Prueba para ver que no se puede crear una cerveza nueva ya que le pasamos un id de categoria que no esta en la base de datos" runType="Run single request">
-      <method v="2" />
+    <configuration name="StyleControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="appDeCervezas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mi.appCervezas.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mi.appCervezas.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.mi.appCervezas.controllers.StyleControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="AppDeCervezasApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
@@ -221,11 +207,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.peticiones | Prueba para ver que no se puede crear una cerveza nueva ya que le pasamos un id de categoria que no esta en la base de datos" />
-        <item itemvalue="HTTP Request.peticiones | Funciona: Se le pasa los datos de la cerveza que queremos agregar a la lista de cervezas" />
+        <item itemvalue="JUnit.StyleControllerTest" />
+        <item itemvalue="JUnit.BreweryControllerTest" />
+        <item itemvalue="JUnit.BeerControllerTest" />
         <item itemvalue="Spring Boot.AppDeCervezasApplication" />
-        <item itemvalue="HTTP Request.peticiones | Prueba para intentar recuperar la info de un estilo de cerveza con un id que no existe en la base de datos" />
-        <item itemvalue="HTTP Request.All in peticiones" />
+        <item itemvalue="HTTP Request.peticiones | Prueba para intentar actualizar una cerveza por id con uno que no se encuentra en la base de datos" />
       </list>
     </recent_temporary>
   </component>
@@ -277,7 +263,8 @@
       <workItem from="1700679383988" duration="4797000" />
       <workItem from="1700809711894" duration="8497000" />
       <workItem from="1700818769583" duration="1602000" />
-      <workItem from="1700838035772" duration="8361000" />
+      <workItem from="1700838035772" duration="8686000" />
+      <workItem from="1700909457346" duration="957000" />
     </task>
     <task id="LOCAL-00001" summary="Agregando dependencias y creando clase de prueba para ejecutar">
       <option name="closed" value="true" />
@@ -543,7 +530,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700817564748</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Modificando peticiones formato y demás">
+      <option name="closed" value="true" />
+      <created>1700847804311</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1700847804311</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -561,7 +556,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Añadiendo componentScan" />
     <MESSAGE value="Probando que aparezcan las tablas en  mysqlWorkbench" />
     <MESSAGE value="Añadiendo columnas restantes de beers" />
     <MESSAGE value="Cambiando rutas de controllers y empezando a cambiar columns de models" />
@@ -586,6 +580,7 @@
     <MESSAGE value="Correcciones tests addBeer y terminados tests" />
     <MESSAGE value="Añadiendo paginación al método getAll de los 4 controladores" />
     <MESSAGE value="Comprobando subida push" />
-    <option name="LAST_COMMIT_MESSAGE" value="Comprobando subida push" />
+    <MESSAGE value="Modificando peticiones formato y demás" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificando peticiones formato y demás" />
   </component>
 </project>

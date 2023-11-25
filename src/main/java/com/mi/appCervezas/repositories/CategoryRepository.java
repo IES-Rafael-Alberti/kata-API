@@ -1,6 +1,5 @@
 package com.mi.appCervezas.repositories;
 
-import com.mi.appCervezas.models.Brewery;
 import com.mi.appCervezas.models.Category;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

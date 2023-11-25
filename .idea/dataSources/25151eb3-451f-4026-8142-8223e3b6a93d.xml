@@ -1077,8 +1077,8 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="292" parent="1" name="pruebaspringboot">
       <Current>1</Current>
-      <IntrospectionTimestamp>2023-11-24.16:48:59</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-11-24.15:48:59</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-11-25.11:53:08</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-11-25.10:53:08</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="293" parent="1" name="sys">
@@ -1123,7 +1123,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
     <column id="303" parent="299" name="id">
-      <AutoIncrement>5915</AutoIncrement>
+      <AutoIncrement>5918</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>

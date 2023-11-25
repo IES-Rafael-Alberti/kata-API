@@ -1,8 +1,6 @@
 package com.mi.appCervezas.controllers;
 
-import com.mi.appCervezas.dto.CategoryDTO;
 import com.mi.appCervezas.dto.StyleDTO;
-import com.mi.appCervezas.models.Category;
 import com.mi.appCervezas.models.Style;
 import com.mi.appCervezas.services.StyleService;
 import org.junit.jupiter.api.Test;
@@ -12,7 +10,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
