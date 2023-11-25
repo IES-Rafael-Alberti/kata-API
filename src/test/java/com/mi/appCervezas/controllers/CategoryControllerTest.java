@@ -21,6 +21,8 @@ import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
+import static org.springframework.mock.http.server.reactive.MockServerHttpRequest.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @ExtendWith(MockitoExtension.class)
 class CategoryControllerTest {
@@ -48,16 +50,12 @@ class CategoryControllerTest {
         // Llamar al método del controlador
         ResponseEntity<Page<CategoryDTO>> result = categoryController.getAllCategories(0, 5);
 
-
         // Verificar el resultado
         assertEquals(mockCategories.size(), Objects.requireNonNull(result.getBody()).getContent().size());
 
         // Verificar que se llamó al servicio
         verify(categoryService, times(1)).getAllCategories(any(Pageable.class));
     }
-
-
-
 
 
     public static Category crearCategory(Long id, String cat_name, Date last_mod) {
@@ -89,6 +87,21 @@ class CategoryControllerTest {
 
         // Verificar que se llamó al servicio
         verify(categoryService, times(1)).getCategoryById(categoryId);
+    }
+
+    @Test
+    void getNonexistentCategoryById() {
+        // Configurar el comportamiento simulado del servicio para devolver null
+        when(categoryService.getCategoryById(anyLong())).thenReturn(null);
+
+        // Llamar al método del controlador
+        ResponseEntity<CategoryDTO> result = (ResponseEntity<CategoryDTO>) categoryController.getCategoryById(7890L);
+
+        // Verificar el resultado
+        assertEquals(HttpStatus.NOT_FOUND, result.getStatusCode());
+
+        // Verificar que se llamó al servicio
+        verify(categoryService, times(1)).getCategoryById(7890L);
     }
 
 }

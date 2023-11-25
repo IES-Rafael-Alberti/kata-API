@@ -12,6 +12,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.util.Arrays;
@@ -19,6 +20,7 @@ import java.util.Date;
 import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -114,5 +116,28 @@ class BreweryControllerTest {
         // Verificar que se llamó al servicio
         verify(breweryService, times(1)).getBreweryById(breweryId);
     }
+
+    @Test
+    void getNonexistentBreweryById() {
+        // Configurar datos simulados
+        Long nonexistentBreweryId = 5000L;
+
+        // Configurar comportamiento simulado del servicio para devolver null
+        when(breweryService.getBreweryById(nonexistentBreweryId)).thenReturn(null);
+
+        // Instanciar el controlador con el servicio simulado
+        BreweryController breweryController = new BreweryController(breweryService);
+
+        // Llamar al método del controlador
+        ResponseEntity<BreweryDTO> result = breweryController.getBreweryById(nonexistentBreweryId);
+
+        // Verificar el resultado
+        assertEquals(HttpStatus.NOT_FOUND, result.getStatusCode()); // Verificar que el código de estado es 404 (Not Found)
+        assertNull(result.getBody()); // Verificar que el cuerpo de la respuesta es null
+
+        // Verificar que se llamó al servicio
+        verify(breweryService, times(1)).getBreweryById(nonexistentBreweryId);
+    }
+
 
 }

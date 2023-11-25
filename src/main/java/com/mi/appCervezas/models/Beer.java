@@ -26,13 +26,6 @@ public class Beer {
     @JoinColumn(name = "style_id", nullable = false)
     private Style style;
 
-
-    /*@Column(name = "brewery_id", nullable = false)
-    private Long breweryId;*/
-
-    /*@Column(name = "style_id", nullable = false)
-    private Long styleId;*/
-
     @Column(nullable = false, columnDefinition = "FLOAT DEFAULT 0")
     private float abv;
 

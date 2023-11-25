@@ -4,21 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54efa3af-9e0c-42da-a09c-e2f76970bd56" name="Changes" comment="">
+    <list default="true" id="54efa3af-9e0c-42da-a09c-e2f76970bd56" name="Changes" comment="Quitando imports y demás cosas innecesarias">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/25151eb3-451f-4026-8142-8223e3b6a93d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/25151eb3-451f-4026-8142-8223e3b6a93d.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/25151eb3-451f-4026-8142-8223e3b6a93d/storage_v2/_src_/schema/pruebaspringboot.EJFvtQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/25151eb3-451f-4026-8142-8223e3b6a93d/storage_v2/_src_/schema/pruebaspringboot.EJFvtQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/controllers/BreweryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/controllers/BreweryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/controllers/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/controllers/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/repositories/BreweryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/repositories/BreweryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/repositories/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/repositories/CategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/repositories/StyleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/repositories/StyleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/controllers/BeerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/controllers/BeerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/models/Beer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/models/Beer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/BeerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/BeerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/BreweryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/BreweryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/StyleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/StyleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mi/appCervezas/controllers/BeerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mi/appCervezas/controllers/BeerControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/mi/appCervezas/controllers/BreweryControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mi/appCervezas/controllers/BreweryControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/mi/appCervezas/controllers/CategoryControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mi/appCervezas/controllers/CategoryControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mi/appCervezas/controllers/StyleControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mi/appCervezas/controllers/StyleControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mi/appCervezas/controllers/BreweryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mi/appCervezas/controllers/BreweryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mi/appCervezas/controllers/CategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mi/appCervezas/controllers/CategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mi/appCervezas/services/BeerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mi/appCervezas/services/BeerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mi/appCervezas/services/BreweryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mi/appCervezas/services/BreweryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mi/appCervezas/services/CategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mi/appCervezas/services/CategoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mi/appCervezas/services/StyleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mi/appCervezas/services/StyleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/mi/appCervezas/controllers/BreweryControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/mi/appCervezas/controllers/BreweryControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/mi/appCervezas/controllers/CategoryControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/mi/appCervezas/controllers/CategoryControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/mi/appCervezas/controllers/StyleControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/mi/appCervezas/controllers/StyleControllerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,9 +145,6 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.StyleControllerTest">
-    <configuration name="peticiones | Prueba para intentar actualizar una cerveza por id con uno que no se encuentra en la base de datos" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/peticiones.http" index="9" requestIdentifier="Prueba para intentar actualizar una cerveza por id con uno que no se encuentra en la base de datos" runType="Run single request">
-      <method v="2" />
-    </configuration>
     <configuration name="BeerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="appDeCervezas" />
       <extension name="coverage">
@@ -155,7 +160,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BreweryControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BeerControllerTest.updateNonexistentBeerById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="appDeCervezas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mi.appCervezas.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mi.appCervezas.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.mi.appCervezas.controllers.BeerControllerTest" />
+      <option name="METHOD_NAME" value="updateNonexistentBeerById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BreweryControllerTest.getNonexistentBreweryById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="appDeCervezas" />
       <extension name="coverage">
         <pattern>
@@ -165,6 +186,22 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.mi.appCervezas.controllers" />
       <option name="MAIN_CLASS_NAME" value="com.mi.appCervezas.controllers.BreweryControllerTest" />
+      <option name="METHOD_NAME" value="getNonexistentBreweryById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CategoryControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="appDeCervezas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mi.appCervezas.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mi.appCervezas.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.mi.appCervezas.controllers.CategoryControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -185,16 +222,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppDeCervezasApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="AppDeCervezasApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="appDeCervezas" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.mi.appCervezas.AppDeCervezasApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.mi.appCervezas.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -208,10 +239,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.StyleControllerTest" />
-        <item itemvalue="JUnit.BreweryControllerTest" />
+        <item itemvalue="JUnit.CategoryControllerTest" />
+        <item itemvalue="JUnit.BreweryControllerTest.getNonexistentBreweryById" />
         <item itemvalue="JUnit.BeerControllerTest" />
-        <item itemvalue="Spring Boot.AppDeCervezasApplication" />
-        <item itemvalue="HTTP Request.peticiones | Prueba para intentar actualizar una cerveza por id con uno que no se encuentra en la base de datos" />
+        <item itemvalue="JUnit.BeerControllerTest.updateNonexistentBeerById" />
       </list>
     </recent_temporary>
   </component>
@@ -264,7 +295,7 @@
       <workItem from="1700809711894" duration="8497000" />
       <workItem from="1700818769583" duration="1602000" />
       <workItem from="1700838035772" duration="8686000" />
-      <workItem from="1700909457346" duration="957000" />
+      <workItem from="1700909457346" duration="8215000" />
     </task>
     <task id="LOCAL-00001" summary="Agregando dependencias y creando clase de prueba para ejecutar">
       <option name="closed" value="true" />
@@ -538,7 +569,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700847804311</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Quitando imports y demás cosas innecesarias">
+      <option name="closed" value="true" />
+      <created>1700910511983</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1700910511983</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -556,7 +595,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Probando que aparezcan las tablas en  mysqlWorkbench" />
     <MESSAGE value="Añadiendo columnas restantes de beers" />
     <MESSAGE value="Cambiando rutas de controllers y empezando a cambiar columns de models" />
     <MESSAGE value="Cambiando propiedades de las tablas de cada clase" />
@@ -581,6 +619,7 @@
     <MESSAGE value="Añadiendo paginación al método getAll de los 4 controladores" />
     <MESSAGE value="Comprobando subida push" />
     <MESSAGE value="Modificando peticiones formato y demás" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modificando peticiones formato y demás" />
+    <MESSAGE value="Quitando imports y demás cosas innecesarias" />
+    <option name="LAST_COMMIT_MESSAGE" value="Quitando imports y demás cosas innecesarias" />
   </component>
 </project>

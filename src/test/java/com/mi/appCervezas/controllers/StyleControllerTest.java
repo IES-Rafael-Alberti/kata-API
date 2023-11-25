@@ -48,15 +48,12 @@ class StyleControllerTest {
         // Llamar al método del controlador
         ResponseEntity<Page<StyleDTO>> result = styleController.getAllStyles(0, 5, "id");
 
-
         // Verificar el resultado.
         assertEquals(mockStyles.size(), Objects.requireNonNull(result.getBody()).getContent().size());
 
         // Verificar que se llamó al servicio
         verify(styleService, times(1)).getAllStyles(any(Pageable.class));
     }
-
-
 
 
     public static Style crearStyle(Long id, Integer cat_id, String style_name, Date last_mod) {
@@ -88,4 +85,25 @@ class StyleControllerTest {
         // Verificar que se llamó al servicio
         verify(styleService, times(1)).getStyleById(styleId);
     }
+
+    @Test
+    void getNonexistentStyleById() {
+        // Configurar datos simulados
+        Long nonexistentStyleId = 5789L;
+
+        // Configurar comportamiento simulado del servicio
+        when(styleService.getStyleById(nonexistentStyleId)).thenReturn(null);
+
+        // Llamar al método del controlador
+        ResponseEntity<StyleDTO> result = styleController.getStyleById(nonexistentStyleId);
+
+        // Verificar el resultado
+        assertEquals(HttpStatus.NOT_FOUND, result.getStatusCode());
+
+        // No necesitas verificar el cuerpo cuando esperas un HttpStatus.NOT_FOUND
+
+        // Verificar que se llamó al servicio
+        verify(styleService, times(1)).getStyleById(nonexistentStyleId);
+    }
+
 }

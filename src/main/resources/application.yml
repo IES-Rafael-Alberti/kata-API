@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/pruebaspringboot
     username: root
-    password: Mariposa$$100
+    password: Super
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     properties:

@@ -25,8 +25,7 @@ import java.util.List;
 import java.util.Objects;
 
 import static com.mi.appCervezas.controllers.CategoryControllerTest.crearCategory;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -106,11 +105,46 @@ class BeerControllerTest {
         verify(categoryService, times(1)).getCategoryById(1L);
     }
 
+    @Test
+    void addBeerWithInvalidCategoryId() {
+        // Configurar datos simulados
+        BeerDTO beerDTOWithInvalidCategoryId = new BeerDTO();
+        beerDTOWithInvalidCategoryId.setBrewery_id(40000L);
+        beerDTOWithInvalidCategoryId.setName("Ale");
+        beerDTOWithInvalidCategoryId.setCat_id(20000L); // ID de categoría no existente
+        beerDTOWithInvalidCategoryId.setStyle_id(20000L); // ID de estilo no existente
+        beerDTOWithInvalidCategoryId.setAbv(4);
+        beerDTOWithInvalidCategoryId.setIbu(20);
+        beerDTOWithInvalidCategoryId.setSrm(10);
+        beerDTOWithInvalidCategoryId.setUpc(9);
+        beerDTOWithInvalidCategoryId.setFilepath("");
+        beerDTOWithInvalidCategoryId.setDescript("Una cerveza de tipo lager con un toque marino, refrescante y ligera, perfecta para los días de verano.");
+        beerDTOWithInvalidCategoryId.setAdd_user(2);
+        Date lastModDate = null;
+        try {
+            lastModDate = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX").parse("2023-11-20T12:00:00.000+00:00");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        beerDTOWithInvalidCategoryId.setLast_mod(lastModDate);
+
+        // Configurar el comportamiento del servicio para verificar la categoría
+        when(categoryService.getCategoryById(20000L)).thenReturn(null);
+
+        // Llamar al método del controlador
+        ResponseEntity<?> result = beerController.addBeer(beerDTOWithInvalidCategoryId);
+
+        // Verificar el resultado
+        assertEquals(HttpStatus.BAD_REQUEST, result.getStatusCode());
+        assertEquals("No se encontró una categoría con el ID proporcionado: 20000", result.getBody());
+
+        // Verificar que el servicio no se llamó para agregar la cerveza
+        verify(beerService, never()).addBeer(any());
+    }
 
 
     @Test
     void getBeerById() {
-
         // Configurar datos simulados
         Long beerId = 1L;
         Beer mockBeer = new Beer();
@@ -120,7 +154,7 @@ class BeerControllerTest {
         when(beerService.getBeerById(beerId)).thenReturn(mockBeer);
 
         // Llamar al método del controlador
-        ResponseEntity<BeerDTO> result = beerController.getBeerById(beerId);
+        ResponseEntity<?> result = beerController.getBeerById(beerId);
 
         // Verificar el resultado
         assertEquals(HttpStatus.OK, result.getStatusCode());
@@ -130,10 +164,37 @@ class BeerControllerTest {
         verify(beerService, times(1)).getBeerById(beerId);
     }
 
+
+    @Test
+    void getBeerWithInvalidId() {
+        // Configurar datos simulados
+        Long invalidBeerId = 200000L;
+
+        // Configurar el comportamiento del servicio para obtener la cerveza por ID
+        when(beerService.getBeerById(invalidBeerId)).thenReturn(null);
+
+        // Llamar al método del controlador
+        ResponseEntity<?> result = beerController.getBeerById(invalidBeerId);
+
+        // Verificar el resultado
+        assertEquals(HttpStatus.NOT_FOUND, result.getStatusCode());
+
+        // Verificar que el cuerpo del resultado no sea nulo y contenga el mensaje esperado
+        assertNotNull(result.getBody());
+        assertEquals("No se encontró una cerveza con el ID proporcionado: " + invalidBeerId, result.getBody());
+
+        // Verificar que el servicio se llamó para obtener la cerveza por ID
+        verify(beerService, times(1)).getBeerById(invalidBeerId);
+    }
+
+
     @Test
     void deleteBeer() {
         // Configurar datos simulados
         Long beerId = 1L;
+
+        // Configurar el comportamiento del servicio
+        when(beerService.beerExists(beerId)).thenReturn(true);
 
         // Llamar al método del controlador
         ResponseEntity<Void> result = beerController.deleteBeer(beerId);
@@ -146,11 +207,27 @@ class BeerControllerTest {
     }
 
     @Test
+    void deleteNonexistentBeer() {
+        // Configurar datos simulados para una cerveza que no existe
+        Long nonExistentBeerId = 8000L;
+        when(beerService.beerExists(nonExistentBeerId)).thenReturn(false);
+
+        // Llamar al método del controlador
+        ResponseEntity<Void> result = beerController.deleteBeer(nonExistentBeerId);
+
+        // Verificar el resultado
+        assertEquals(HttpStatus.NOT_FOUND, result.getStatusCode());
+
+        // Verificar que no se llamó al servicio en este caso
+        verify(beerService, never()).deleteBeer(nonExistentBeerId);
+    }
+
+
+    @Test
     void updateBeer() {
         // Configurar datos simulados
         Long beerId = 1L;
         BeerDTO updatedBeerDTO = new BeerDTO();
-
         updatedBeerDTO.setBrewery_id(2L);
         updatedBeerDTO.setName("Classic");
         updatedBeerDTO.setCat_id(2L);
@@ -168,7 +245,8 @@ class BeerControllerTest {
         when(beerService.updateBeer(eq(beerId), any(Beer.class))).thenReturn(updatedBeer);
 
         // Llamar al método del controlador
-        ResponseEntity<BeerDTO> result = beerController.updateBeer(beerId, updatedBeerDTO);
+        ResponseEntity<BeerDTO> result = (ResponseEntity<BeerDTO>) beerController.updateBeer(beerId, updatedBeerDTO);
+
 
         // Verificar el resultado
         assertEquals(HttpStatus.OK, result.getStatusCode());
@@ -177,4 +255,38 @@ class BeerControllerTest {
         // Verificar que se llamó al servicio
         verify(beerService, times(1)).updateBeer(eq(beerId), any(Beer.class));
     }
+
+    @Test
+    void updateNonexistentBeerById() {
+        // Configurar datos simulados
+        Long nonexistentBeerId = 6000L;
+        BeerDTO updatedBeerDTO = new BeerDTO();
+
+        updatedBeerDTO.setBrewery_id(2L);
+        updatedBeerDTO.setName("Classic");
+        updatedBeerDTO.setCat_id(2L);
+        updatedBeerDTO.setAbv(8);
+        updatedBeerDTO.setIbu(10);
+        updatedBeerDTO.setSrm(12);
+        updatedBeerDTO.setUpc(12);
+        updatedBeerDTO.setFilepath("");
+        updatedBeerDTO.setDescript("");
+        updatedBeerDTO.setAdd_user(2);
+
+        // Configurar el comportamiento del servicio para actualizar la cerveza por ID
+        when(beerService.updateBeer(eq(nonexistentBeerId), any(Beer.class)))
+                .thenThrow(new IllegalArgumentException("No se encontró una cerveza con el ID proporcionado: " + nonexistentBeerId));
+
+        // Llamar al método del controlador
+        ResponseEntity<?> result = beerController.updateBeer(nonexistentBeerId, updatedBeerDTO);
+
+        // Verificar el resultado
+        assertEquals(HttpStatus.NOT_FOUND, result.getStatusCode());
+        assertNotNull(result.getBody());
+        assertEquals("No se encontró una cerveza con el ID proporcionado: " + nonexistentBeerId, result.getBody());
+
+        // Verificar que el servicio se llamó para actualizar la cerveza por ID
+        verify(beerService, times(1)).updateBeer(eq(nonexistentBeerId), any(Beer.class));
+    }
+
 }

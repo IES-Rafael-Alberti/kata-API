@@ -18,7 +18,6 @@ public class CategoryService {
         return categoryRepository.findAll(pageable);
     }
 
-
     public CategoryDTO getCategoryById(Long id) {
         Category category = categoryRepository.findById(id).orElse(null);
         if (category != null) {

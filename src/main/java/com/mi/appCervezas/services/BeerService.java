@@ -19,6 +19,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @Service
 public class BeerService {
 
@@ -41,6 +43,12 @@ public class BeerService {
     public Beer getBeerById(Long id) {
         return beerRepository.findById(id).orElseThrow(() -> new BeerNotFoundException("Beer not found with id: " + id));
     }
+
+    public boolean beerExists(Long id) {
+        Optional<Beer> beer = beerRepository.findById(id);
+        return beer.isPresent();
+    }
+
 
     @Transactional
     public Beer addBeer(BeerDTO beerDTO) {
@@ -88,7 +96,6 @@ public class BeerService {
 
         return beerRepository.save(beer);
     }
-
 
 
     public void deleteBeer(Long id) {
@@ -149,8 +156,5 @@ public class BeerService {
 
         return beerRepository.save(existingBeer);
     }
-
-
-
 
 }

@@ -1077,8 +1077,8 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="292" parent="1" name="pruebaspringboot">
       <Current>1</Current>
-      <IntrospectionTimestamp>2023-11-25.11:53:08</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-11-25.10:53:08</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-11-25.12:19:19</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-11-25.11:19:19</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="293" parent="1" name="sys">
