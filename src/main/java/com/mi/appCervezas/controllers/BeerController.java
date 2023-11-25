@@ -151,26 +151,14 @@ public class BeerController {
                         .body("No se encontró una cerveza con el ID proporcionado: " + id);
             }
 
-            // Resto del código para manejar la respuesta exitosa
-            return ResponseEntity.ok(updatedBeerDTO); // Aquí asumiendo que deseas devolver el DTO actualizado
+            // Construir el DTO después de asegurar que la transacción se haya completado
+            BeerDTO responseDTO = new BeerDTO(updatedBeer);
+
+            return ResponseEntity.ok(responseDTO);
         } catch (IllegalArgumentException ex) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body("No se encontró una cerveza con el ID proporcionado: " + id);
         }
     }
 
-
-
-
-
-    /*public ResponseEntity<BeerDTO> updateBeer(@PathVariable Long id, @RequestBody BeerDTO beerDTO) {
-        try {
-            Beer beer = beerDTO.toBeer();
-            Beer updatedBeer = beerService.updateBeer(id, beer);
-            BeerDTO updatedBeerDTO = new BeerDTO(updatedBeer);
-            return ResponseEntity.ok(updatedBeerDTO);
-        } catch (BeerNotFoundException ex) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
-    }*/
 }
