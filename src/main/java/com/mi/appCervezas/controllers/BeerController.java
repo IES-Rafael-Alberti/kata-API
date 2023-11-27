@@ -37,22 +37,41 @@ public class BeerController {
         this.categoryService = categoryService;
     }
 
+    /**
+     * Maneja las solicitudes HTTP GET para recuperar una lista paginada de cervezas.
+     *
+     * @param page Número de página solicitado (por defecto: 0).
+     * @param size Tamaño de la página solicitado (por defecto: 10).
+     * @return ResponseEntity<Page<BeerDTO>> con la lista paginada de BeerDTO y detalles de paginación.
+     */
     @GetMapping("/beers")
     public ResponseEntity<Page<BeerDTO>> getAllBeers(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
 
+        // Creación de objeto Pageable
         Pageable pageable = PageRequest.of(page, size);
+        // Llamada al servicio para obtener página de cervezas
         Page<Beer> beerPage = beerService.getAllBeers(pageable);
 
+        // Mapeo de entidades a DTO
         List<BeerDTO> beerDTOList = beerPage.getContent().stream()
                 .map(BeerDTO::new)
                 .collect(Collectors.toList());
 
+        /* Se devuelve una respuesta HTTP 200 (OK) con una instancia de PageImpl
+        que contiene la lista de objetos BeerDTO, la información de paginación y el total de elementos.
+         */
         return ResponseEntity.ok(new PageImpl<>(beerDTOList, pageable, beerPage.getTotalElements()));
     }
 
 
+    /**
+     * Maneja las solicitudes HTTP POST para agregar una nueva cerveza.
+     *
+     * @param beerDTO El objeto BeerDTO que contiene la información de la nueva cerveza.
+     * @return ResponseEntity<?> con el código de estado correspondiente y, opcionalmente, un mensaje o DTO.
+     */
     @PostMapping(value = "/beer", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> addBeer(@RequestBody BeerDTO beerDTO) {
         try {
@@ -79,10 +98,14 @@ public class BeerController {
                 throw new IllegalArgumentException("cat_id en Beer no puede ser nulo");
             }
 
+            // Agregar la cerveza utilizando el servicio y obtener la cerveza guardada
             Beer savedBeer = beerService.addBeer(beerDTO);
+
+            // Crear un DTO a partir de la cerveza guardada y devolver una respuesta HTTP 201 (Created)
             BeerDTO savedBeerDTO = new BeerDTO(savedBeer);
             return ResponseEntity.status(HttpStatus.CREATED).body(savedBeerDTO);
         } catch (IllegalArgumentException e) {
+            // Manejar la excepción de argumento ilegal
             System.err.println(e.getMessage());
             return ResponseEntity.badRequest().body(e.getMessage());
         } catch (DataIntegrityViolationException e) {
@@ -116,8 +139,15 @@ public class BeerController {
     }
 
 
+    /**
+     * Maneja las solicitudes HTTP GET para recuperar una cerveza por su ID.
+     *
+     * @param id El ID de la cerveza que se va a recuperar, obtenido del path de la URL.
+     * @return ResponseEntity<?> con la cerveza DTO y el código de estado correspondiente.
+     */
     @GetMapping("/beer/{id}")
     public ResponseEntity<?> getBeerById(@PathVariable Long id) {
+        // Obtener la cerveza por su ID usando el servicio
         Beer beer = beerService.getBeerById(id);
 
         if (beer != null) {
@@ -131,22 +161,44 @@ public class BeerController {
     }
 
 
+    /**
+     * Maneja las solicitudes HTTP DELETE para eliminar una cerveza por su ID.
+     *
+     * @param id El ID de la cerveza que se va a eliminar, obtenido del path de la URL.
+     * @return ResponseEntity<Void> con el código de estado correspondiente.
+     */
     @DeleteMapping("/beer/{id}")
     public ResponseEntity<Void> deleteBeer(@PathVariable Long id) {
         // Comprobar si la cerveza existe antes de intentar eliminarla
         if (!beerService.beerExists(id)) {
+            // Si la cerveza no existe, devuelve una respuesta 404 (Not Found)
             return ResponseEntity.notFound().build();
         }
+        // Si la cerveza existe, llamar al servicio para eliminarla
         beerService.deleteBeer(id);
+
+        /*
+        Si encuentra la cerveza y la elimina, devuelve un 204 (No Content)
+        Si no la encuentra, devuelve un 404 (Not Found)
+         */
         return ResponseEntity.noContent().build();
     }
 
+    /**
+     * Maneja las solicitudes HTTP PUT para actualizar una cerveza por su ID.
+     *
+     * @param id               El ID de la cerveza que se va a actualizar, obtenido del path de la URL.
+     * @param updatedBeerDTO   El objeto BeerDTO que contiene la información actualizada de la cerveza.
+     * @return ResponseEntity<?> con el código de estado correspondiente y, opcionalmente, un mensaje o DTO.
+     */
     @PutMapping("/beer/{id}")
     public ResponseEntity<?> updateBeer(@PathVariable Long id, @RequestBody BeerDTO updatedBeerDTO) {
         try {
+            // Actualizar la cerveza a través del servicio
             Beer updatedBeer = beerService.updateBeer(id, updatedBeerDTO.toBeer());
 
             if (updatedBeer == null) {
+                // Si la cerveza no se encuentra, devuelve una respuesta 404 (Not Found)
                 return ResponseEntity.status(HttpStatus.NOT_FOUND)
                         .body("No se encontró una cerveza con el ID proporcionado: " + id);
             }
