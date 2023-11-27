@@ -4,19 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54efa3af-9e0c-42da-a09c-e2f76970bd56" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/controllers/BeerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/controllers/BeerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/controllers/BreweryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/controllers/BreweryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/controllers/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/controllers/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/controllers/StyleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/controllers/StyleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/BeerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/BeerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/BreweryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/BreweryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/StyleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mi/appCervezas/services/StyleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mi/appCervezas/controllers/BeerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mi/appCervezas/controllers/BeerController.class" afterDir="false" />
+    <list default="true" id="54efa3af-9e0c-42da-a09c-e2f76970bd56" name="Changes" comment="Comentando y documentando los controladores y servicios">
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mi/appDeCervezas/AppDeCervezasApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,7 +265,7 @@
       <workItem from="1700918933069" duration="385000" />
       <workItem from="1700919323497" duration="392000" />
       <workItem from="1700923324017" duration="1469000" />
-      <workItem from="1701069610580" duration="3460000" />
+      <workItem from="1701069610580" duration="3792000" />
     </task>
     <task id="LOCAL-00001" summary="Agregando dependencias y creando clase de prueba para ejecutar">
       <option name="closed" value="true" />
@@ -582,7 +571,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700924761050</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Comentando y documentando los controladores y servicios">
+      <option name="closed" value="true" />
+      <created>1701073357681</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1701073357681</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -600,7 +597,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Eliminando propiedad por defecto de last_mod para evitar conflicto" />
     <MESSAGE value="Cambiando docker-compose config" />
     <MESSAGE value="Añadiendo manejo de excepciones" />
     <MESSAGE value="Resolviendo conflictos de beers del cat_id" />
@@ -625,6 +621,7 @@
     <MESSAGE value="Terminando tests para cuando no encuentra los id´s correspondientes y demás" />
     <MESSAGE value="Continuando perfilando peticiones" />
     <MESSAGE value="Pequeños cambios en controlador para funcionamiento correcto en petición de modificar cerveza" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pequeños cambios en controlador para funcionamiento correcto en petición de modificar cerveza" />
+    <MESSAGE value="Comentando y documentando los controladores y servicios" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comentando y documentando los controladores y servicios" />
   </component>
 </project>
