@@ -4,6 +4,7 @@ import com.example.kataAPI.errors.custom_exceptions.Not_found_beer;
 import com.example.kataAPI.errors.custom_exceptions.Not_found_exception;
 import com.example.kataAPI.model.Style;
 import com.example.kataAPI.repo.repo_style;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,12 +19,12 @@ public class Controller_Styles {
         this.repo_style = repo_style;
     }
 
-    @GetMapping("/styles")// Listar todos los estilos -style-	GET
+    @GetMapping("/styles")// Listar todos los estilos -style- GET
     @ResponseBody
-    public List<Style> get_all_styles () {
+    public ResponseEntity<List<Style>> get_all_styles () {
         List<Style> all_styles = repo_style.findAll();
         if (!all_styles.isEmpty()) {
-            return all_styles;
+            return ResponseEntity.ok(all_styles);
         }
         else {
             throw new Not_found_exception("No data for categories were found");
@@ -32,9 +33,10 @@ public class Controller_Styles {
 
     @GetMapping("/style/{id}")// Mostrar el estilo -style- {id}	GET
     @ResponseBody
-    public Style get_style(@PathVariable Integer id) {
-        return repo_style.findById(id)
+    public ResponseEntity<Style> get_style(@PathVariable Integer id) {
+        Style style_found = repo_style.findById(id)
                 .orElseThrow(() -> new Not_found_exception("The style with id "+ id + "wasn't found"));
+    return ResponseEntity.ok(style_found);
     }
 
 }

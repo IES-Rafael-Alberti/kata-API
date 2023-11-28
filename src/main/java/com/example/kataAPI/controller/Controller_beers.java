@@ -5,6 +5,8 @@ import com.example.kataAPI.errors.custom_exceptions.Not_found_beer;
 import com.example.kataAPI.errors.custom_exceptions.Not_found_exception;
 import com.example.kataAPI.model.Beer;
 import com.example.kataAPI.repo.repo_beer;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,10 +25,10 @@ public class Controller_beers {
 
     @GetMapping("/beers") // Muestra todas las cervezas	GET
     @ResponseBody
-    public List<Beer> get_all_beers(){
+    public ResponseEntity<List<Beer>> get_all_beers(){
         List <Beer> all_beers = repo_beer.findAll();
         if (!all_beers.isEmpty()) {
-            return all_beers;
+            return ResponseEntity.ok(all_beers);
         }
         else  {
             throw new Not_found_exception("No data were found");
@@ -35,9 +37,10 @@ public class Controller_beers {
 
     @GetMapping("/beer/{id}") // Mostrar la cerveza por el id {id}	GET
     @ResponseBody
-    public Beer get_beer(@PathVariable Integer id){
-        return repo_beer.findById(id)
+    public ResponseEntity<Beer> get_beer(@PathVariable Integer id){
+        Beer beer = repo_beer.findById(id)
                 .orElseThrow(()-> new Not_found_beer("Beer with id "+id+" didn´t found"));
+        return ResponseEntity.ok(beer);
     }
 
     @PostMapping("/beer")
@@ -46,7 +49,7 @@ public class Controller_beers {
         Beer beer_exist = repo_beer.findByName(beer.getName());
         if (beer_exist == null ) {
             repo_beer.save(beer);
-            return ResponseEntity.ok(beer);
+            return ResponseEntity.status(HttpStatus.CREATED).body(beer);
         }
         else {
             throw new Beer_exist("This beer already exist");
@@ -60,7 +63,7 @@ public class Controller_beers {
         return repo_beer.findById(id)
                 .map(beer -> {
                     repo_beer.delete(beer);
-                    return ResponseEntity.ok().body("Producto deleted");
+                    return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Producto deleted");
                 })
                 .orElseThrow(()-> new Not_found_beer("Beer with id "+id+" didn´t found"));
     }
