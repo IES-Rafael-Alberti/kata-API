@@ -1,6 +1,6 @@
 
 **Mi documentación de la API** --> DOC.md :
-
+https://github.com/Patcire/kata-API/blob/Patcire/java/DOC.md
 
 > **Note**
 > Si alguien quiere usar docker, docker-compose, adelante.

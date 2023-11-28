@@ -8,7 +8,7 @@
 =
 > Aquí está disponible el archivo
 > JSON con las pruebas realizadas en Insomnia
->: 
+>: https://github.com/Patcire/kata-API/blob/Patcire/java/src/main/insomnia_test/kataAPI-test-insomnia.json
 
 1 - Introducción
 =
