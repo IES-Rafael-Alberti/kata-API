@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="54efa3af-9e0c-42da-a09c-e2f76970bd56" name="Changes" comment="Comentando y documentando los controladores y servicios">
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mi/appDeCervezas/AppDeCervezasApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTTP Public Environment File" />
+        <option value="HTTP Private Environment File" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Alexgf22&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="d9e80831-9cd0-4ba9-b7e0-30b2c04921a2" />
+        <option name="url" value="https://github.com/Alexgf22/kata-API.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="HttpClientSelectedEnvironments">
+    <file url="file://$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" environment="dev2" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="environmentProperties">
+      <map>
+        <entry key="JAVA_HOME" value="C:\Program Files\Java\jre-1.8" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2X9p6I04VSkNmYZYsWbkge3U2kL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Alexgf22/Java&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-21&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/entorno-servidor/java/kata-api-cervezas-Alexgf22/initSQL/styles.sql&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;87062f9162bca05356b6a47e7b609a38&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\entorno-servidor\java\kata-api-cervezas-Alexgf22\src\main\java\com\mi\appCervezas\service" />
+      <recent name="D:\entorno-servidor\java\kata-api-cervezas-Alexgf22\src\main\java\com\mi\appCervezas\repository" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.mi.appCervezas.controllers" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="excludedTypes">
+      <set>
+        <option value="HttpClient.HttpRequestRunConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.StyleControllerTest">
+    <configuration name="peticiones | Prueba para intentar recuperar la info de un estilo de cerveza con un id que no existe en la base de datos" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/peticiones.http" index="18" requestIdentifier="Prueba para intentar recuperar la info de un estilo de cerveza con un id que no existe en la base de datos" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="BeerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="appDeCervezas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mi.appCervezas.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mi.appCervezas.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.mi.appCervezas.controllers.BeerControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BreweryControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="appDeCervezas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mi.appCervezas.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mi.appCervezas.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.mi.appCervezas.controllers.BreweryControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CategoryControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="appDeCervezas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mi.appCervezas.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mi.appCervezas.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.mi.appCervezas.controllers.CategoryControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StyleControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="appDeCervezas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mi.appCervezas.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mi.appCervezas.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.mi.appCervezas.controllers.StyleControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppDeCervezasApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="appDeCervezas" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mi.appCervezas.AppDeCervezasApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.StyleControllerTest" />
+        <item itemvalue="JUnit.CategoryControllerTest" />
+        <item itemvalue="JUnit.BreweryControllerTest" />
+        <item itemvalue="JUnit.BeerControllerTest" />
+        <item itemvalue="HTTP Request.peticiones | Prueba para intentar recuperar la info de un estilo de cerveza con un id que no existe en la base de datos" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="54efa3af-9e0c-42da-a09c-e2f76970bd56" name="Changes" comment="" />
+      <created>1698050974308</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698050974308</updated>
+      <workItem from="1698050978098" duration="382000" />
+      <workItem from="1698051378231" duration="248000" />
+      <workItem from="1698053970652" duration="1310000" />
+      <workItem from="1698055341593" duration="567000" />
+      <workItem from="1698394870061" duration="1751000" />
+      <workItem from="1698505837573" duration="5170000" />
+      <workItem from="1698571433163" duration="9649000" />
+      <workItem from="1698649591824" duration="1785000" />
+      <workItem from="1698651389817" duration="6518000" />
+      <workItem from="1698658451667" duration="1674000" />
+      <workItem from="1698662656038" duration="7673000" />
+      <workItem from="1698692826107" duration="4842000" />
+      <workItem from="1698995337396" duration="5202000" />
+      <workItem from="1699003543225" duration="4000" />
+      <workItem from="1699003690579" duration="1914000" />
+      <workItem from="1699258559228" duration="6132000" />
+      <workItem from="1699264946223" duration="4185000" />
+      <workItem from="1699786437193" duration="1347000" />
+      <workItem from="1699789127107" duration="71000" />
+      <workItem from="1699789216538" duration="6356000" />
+      <workItem from="1699800340077" duration="5997000" />
+      <workItem from="1699859326252" duration="434000" />
+      <workItem from="1699859947160" duration="7110000" />
+      <workItem from="1699867120233" duration="227000" />
+      <workItem from="1699868504134" duration="1113000" />
+      <workItem from="1699872573967" duration="6370000" />
+      <workItem from="1699988499463" duration="3845000" />
+      <workItem from="1700134998247" duration="5500000" />
+      <workItem from="1700144407261" duration="5685000" />
+      <workItem from="1700205841760" duration="6155000" />
+      <workItem from="1700218986213" duration="707000" />
+      <workItem from="1700302765475" duration="5310000" />
+      <workItem from="1700464596724" duration="8470000" />
+      <workItem from="1700473743760" duration="606000" />
+      <workItem from="1700476882723" duration="3837000" />
+      <workItem from="1700484171403" duration="2133000" />
+      <workItem from="1700649856746" duration="9320000" />
+      <workItem from="1700679383988" duration="4797000" />
+      <workItem from="1700809711894" duration="8497000" />
+      <workItem from="1700818769583" duration="1602000" />
+      <workItem from="1700838035772" duration="8686000" />
+      <workItem from="1700909457346" duration="9044000" />
+      <workItem from="1700918644495" duration="23000" />
+      <workItem from="1700918933069" duration="385000" />
+      <workItem from="1700919323497" duration="392000" />
+      <workItem from="1700923324017" duration="1469000" />
+      <workItem from="1701069610580" duration="3792000" />
+    </task>
+    <task id="LOCAL-00001" summary="Agregando dependencias y creando clase de prueba para ejecutar">
+      <option name="closed" value="true" />
+      <created>1698055149868</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698055149869</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Separando en paquetes controller de repository y de style">
+      <option name="closed" value="true" />
+      <created>1698396433541</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698396433541</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Organizando archivos, creando clases de Category, Beer, Style y Brewery. Resolviendo varios errores. Creando método de getAllStyles en StyleService">
+      <option name="closed" value="true" />
+      <created>1698511441253</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698511441253</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Resolviendo conflictos e imports">
+      <option name="closed" value="true" />
+      <created>1698574902491</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698574902491</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Creando archivo de configuración para conexión con la base de datos">
+      <option name="closed" value="true" />
+      <created>1698577912918</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698577912918</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Indicando packages direcciones en app principal y añadiendo varias dependencias necesarias">
+      <option name="closed" value="true" />
+      <created>1698581114131</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1698581114131</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Cambiando nombre de models para clarificar. Probando conexión a la base de datos">
+      <option name="closed" value="true" />
+      <created>1698654263721</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1698654263721</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Quitando imports innecesarios">
+      <option name="closed" value="true" />
+      <created>1698655705798</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1698655705798</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Añadiendo componentScan">
+      <option name="closed" value="true" />
+      <created>1698657732969</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1698657732969</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Probando que aparezcan las tablas en  mysqlWorkbench">
+      <option name="closed" value="true" />
+      <created>1698659519821</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1698659519821</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Añadiendo columnas restantes de beers">
+      <option name="closed" value="true" />
+      <created>1698665013713</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1698665013713</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Cambiando rutas de controllers y empezando a cambiar columns de models">
+      <option name="closed" value="true" />
+      <created>1698697682063</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1698697682063</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Cambiando propiedades de las tablas de cada clase">
+      <option name="closed" value="true" />
+      <created>1698998296607</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1698998296607</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Eliminando propiedad por defecto de last_mod para evitar conflicto">
+      <option name="closed" value="true" />
+      <created>1699004057514</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1699004057514</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Cambiando docker-compose config">
+      <option name="closed" value="true" />
+      <created>1699005032766</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1699005032766</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Añadiendo manejo de excepciones">
+      <option name="closed" value="true" />
+      <created>1699262277762</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1699262277762</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Resolviendo conflictos de beers del cat_id">
+      <option name="closed" value="true" />
+      <created>1699269239262</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1699269239262</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Resolviendo problemas de cat_id, brewery_id y style_id">
+      <option name="closed" value="true" />
+      <created>1699269768225</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1699269768225</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Creando archivo de peticiones http, creando excepciones de no encontradas para cada clase específica">
+      <option name="closed" value="true" />
+      <created>1699787780247</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1699787780247</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Aplicando dto en los controladores">
+      <option name="closed" value="true" />
+      <created>1699792877651</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1699792877651</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Implementando DTO en los controladores y servicios">
+      <option name="closed" value="true" />
+      <created>1699806326592</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1699806326592</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Comprobando puerto configurando propiedades de la base de datos">
+      <option name="closed" value="true" />
+      <created>1699867274116</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1699867274116</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Solucionando problemas en beer">
+      <option name="closed" value="true" />
+      <created>1699875419941</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1699875419941</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Pequeños cambios de confusiones con el dto y probando peticiones">
+      <option name="closed" value="true" />
+      <created>1699992735906</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1699992735906</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Siguiendo con cambios para probar funcionamiento de añadir nueva cerveza">
+      <option name="closed" value="true" />
+      <created>1700152719235</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1700152719235</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Continuando con pequeños cambios como nombres de ciertos campos y perfeccionando control de errores. Ya funciona creación de nueva cerveza">
+      <option name="closed" value="true" />
+      <created>1700307125921</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1700307125921</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Quitando imports innecesarios">
+      <option name="closed" value="true" />
+      <created>1700307581567</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1700307581567</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Realizando tests de controlador Beer">
+      <option name="closed" value="true" />
+      <created>1700474339013</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1700474339013</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Tests de Category Controller, Brewery Controller y Style Controller">
+      <option name="closed" value="true" />
+      <created>1700653798538</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1700653798538</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Cambios realizados en properties y docker-compose">
+      <option name="closed" value="true" />
+      <created>1700656170650</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1700656170650</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Correcciones tests addBeer y terminados tests">
+      <option name="closed" value="true" />
+      <created>1700682094060</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1700682094060</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Añadiendo paginación al método getAll de los 4 controladores">
+      <option name="closed" value="true" />
+      <created>1700817494137</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1700817494137</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Comprobando subida push">
+      <option name="closed" value="true" />
+      <created>1700817564748</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1700817564748</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Modificando peticiones formato y demás">
+      <option name="closed" value="true" />
+      <created>1700847804311</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1700847804311</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Quitando imports y demás cosas innecesarias">
+      <option name="closed" value="true" />
+      <created>1700910511983</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1700910511983</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Terminando tests para cuando no encuentra los id´s correspondientes y demás">
+      <option name="closed" value="true" />
+      <created>1700917955932</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1700917955932</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Continuando perfilando peticiones">
+      <option name="closed" value="true" />
+      <created>1700918515102</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1700918515102</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Pequeños cambios en controlador para funcionamiento correcto en petición de modificar cerveza">
+      <option name="closed" value="true" />
+      <created>1700924761050</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1700924761050</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Comentando y documentando los controladores y servicios">
+      <option name="closed" value="true" />
+      <created>1701073357681</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1701073357681</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Cambiando docker-compose config" />
+    <MESSAGE value="Añadiendo manejo de excepciones" />
+    <MESSAGE value="Resolviendo conflictos de beers del cat_id" />
+    <MESSAGE value="Resolviendo problemas de cat_id, brewery_id y style_id" />
+    <MESSAGE value="Creando archivo de peticiones http, creando excepciones de no encontradas para cada clase específica" />
+    <MESSAGE value="Aplicando dto en los controladores" />
+    <MESSAGE value="Implementando DTO en los controladores y servicios" />
+    <MESSAGE value="Comprobando puerto configurando propiedades de la base de datos" />
+    <MESSAGE value="Solucionando problemas en beer" />
+    <MESSAGE value="Pequeños cambios de confusiones con el dto y probando peticiones" />
+    <MESSAGE value="Siguiendo con cambios para probar funcionamiento de añadir nueva cerveza" />
+    <MESSAGE value="Continuando con pequeños cambios como nombres de ciertos campos y perfeccionando control de errores. Ya funciona creación de nueva cerveza" />
+    <MESSAGE value="Quitando imports innecesarios" />
+    <MESSAGE value="Realizando tests de controlador Beer" />
+    <MESSAGE value="Tests de Category Controller, Brewery Controller y Style Controller" />
+    <MESSAGE value="Cambios realizados en properties y docker-compose" />
+    <MESSAGE value="Correcciones tests addBeer y terminados tests" />
+    <MESSAGE value="Añadiendo paginación al método getAll de los 4 controladores" />
+    <MESSAGE value="Comprobando subida push" />
+    <MESSAGE value="Modificando peticiones formato y demás" />
+    <MESSAGE value="Quitando imports y demás cosas innecesarias" />
+    <MESSAGE value="Terminando tests para cuando no encuentra los id´s correspondientes y demás" />
+    <MESSAGE value="Continuando perfilando peticiones" />
+    <MESSAGE value="Pequeños cambios en controlador para funcionamiento correcto en petición de modificar cerveza" />
+    <MESSAGE value="Comentando y documentando los controladores y servicios" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comentando y documentando los controladores y servicios" />
+  </component>
+</project>

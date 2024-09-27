@@ -1,0 +1,28 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="IncorrectHttpHeaderInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="customHeaders">
+        <set>
+          <option value="    &quot;name&quot;" />
+          <option value="    &quot;cat_id&quot;" />
+          <option value="    &quot;style_id&quot;" />
+          <option value="    &quot;brewery_id&quot;" />
+          <option value="    &quot;abv&quot;" />
+          <option value="    &quot;ibu&quot;" />
+          <option value="    &quot;srm&quot;" />
+          <option value="    &quot;upc&quot;" />
+          <option value="    &quot;filepath&quot;" />
+          <option value="    &quot;descript&quot;" />
+          <option value="    &quot;add_user&quot;" />
+          <option value="    &quot;last_mod&quot;" />
+          <option value="}" />
+          <option value="{" />
+        </set>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="ThrowablePrintStackTrace" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Tests" level="WARNING" enabled="false" />
+    </inspection_tool>
+  </profile>
+</component>

@@ -1,0 +1,730 @@
+GET http://localhost:8080/style/5789
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:8080/style/4
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-25T155812.200.json
+
+###
+
+GET http://localhost:8080/styles
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-25T155805.200.json
+
+###
+
+GET http://localhost:8080/category/7890
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:8080/category/6
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-25T155800.200.json
+
+###
+
+GET http://localhost:8080/categories
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-25T155753.200.json
+
+###
+
+GET http://localhost:8080/brewery/5000
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:8080/brewery/4
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-25T155745.200.json
+
+###
+
+GET http://localhost:8080/breweries
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-25T155729.200.json
+
+###
+
+PUT http://localhost:8080/beer/6000
+Content-Type: application/json
+Content-Length: 255
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+    "brewery_id": 1,
+    "name": "Magic Ale",
+    "cat_id": 2,
+    "style_id": 3,
+    "abv": 9.5,
+    "ibu": 20.0,
+    "srm": 6.0,
+    "upc": 0,
+    "filepath": "",
+    "descript": "",
+    "add_user": 0,
+    "last_mod": "2023-10-30T12:00:00.000+00:00"
+}
+
+<> 2023-11-25T155723.404.json
+
+###
+
+PUT http://localhost:8080/beer/4
+Content-Type: application/json
+Content-Length: 255
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+    "brewery_id": 1,
+    "name": "Magic Ale",
+    "cat_id": 2,
+    "style_id": 3,
+    "abv": 9.5,
+    "ibu": 22.0,
+    "srm": 6.0,
+    "upc": 0,
+    "filepath": "",
+    "descript": "",
+    "add_user": 0,
+    "last_mod": "2023-10-30T12:00:00.000+00:00"
+}
+
+<> 2023-11-25T155715.200.json
+
+###
+
+DELETE http://localhost:8080/beer/34
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+DELETE http://localhost:8080/beer/32
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+DELETE http://localhost:8080/beer/8000
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+DELETE http://localhost:8080/beer/32
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:8080/beer/200000
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-25T155652.404.json
+
+###
+
+GET http://localhost:8080/beer/2
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-25T155641.200.json
+
+###
+
+POST http://localhost:8080/beer
+Content-Type: application/json
+Content-Length: 376
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+    "brewery_id": 40000,
+    "name": "Ale",
+    "cat_id": 20000,
+    "style_id": 20000,
+    "abv": 4.5,
+    "ibu": 20.0,
+    "srm": 10.0,
+    "upc": 987654321,
+    "filepath": "",
+    "descript": "Una cerveza de tipo lager con un toque marino, refrescante y ligera, perfecta para los días de verano.",
+    "add_user": 2000,
+    "last_mod": "2023-11-30T12:00:00.000+00:00"
+}
+
+<> 2023-11-25T155633.400.txt
+
+###
+
+POST http://localhost:8080/beer
+Content-Type: application/json
+Content-Length: 371
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+    "brewery_id": 2,
+    "name": "Lager del Mar",
+    "cat_id": 2,
+    "style_id": 2,
+    "abv": 4.5,
+    "ibu": 20.0,
+    "srm": 10.0,
+    "upc": 987654321,
+    "filepath": "",
+    "descript": "Una cerveza de tipo lager con un toque marino, refrescante y ligera, perfecta para los días de verano.",
+    "add_user": 2,
+    "last_mod": "2023-11-30T12:00:00.000+00:00"
+}
+
+<> 2023-11-25T155624.201.json
+
+###
+
+GET http://localhost:8080/beers
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-25T155608.200.json
+
+###
+
+PUT http://localhost:8080/beer/4
+Content-Type: application/json
+Content-Length: 255
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+    "brewery_id": 1,
+    "name": "Magic Ale",
+    "cat_id": 2,
+    "style_id": 3,
+    "abv": 9.5,
+    "ibu": 22.0,
+    "srm": 6.0,
+    "upc": 0,
+    "filepath": "",
+    "descript": "",
+    "add_user": 0,
+    "last_mod": "2023-10-30T12:00:00.000+00:00"
+}
+
+<> 2023-11-25T155524.200.json
+
+###
+
+PUT http://localhost:8080/beer/6000
+Content-Type: application/json
+Content-Length: 255
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+    "brewery_id": 1,
+    "name": "Magic Ale",
+    "cat_id": 2,
+    "style_id": 3,
+    "abv": 9.5,
+    "ibu": 20.0,
+    "srm": 6.0,
+    "upc": 0,
+    "filepath": "",
+    "descript": "",
+    "add_user": 0,
+    "last_mod": "2023-10-30T12:00:00.000+00:00"
+}
+
+<> 2023-11-25T155517.404.json
+
+###
+
+GET http://localhost:8080/beers
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-25T155100.200.json
+
+###
+
+PUT http://localhost:8080/beer/4
+Content-Type: application/json
+Content-Length: 255
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+    "brewery_id": 1,
+    "name": "Magic Ale",
+    "cat_id": 2,
+    "style_id": 3,
+    "abv": 9.5,
+    "ibu": 22.0,
+    "srm": 6.0,
+    "upc": 0,
+    "filepath": "",
+    "descript": "",
+    "add_user": 0,
+    "last_mod": "2023-10-30T12:00:00.000+00:00"
+}
+
+<> 2023-11-25T155049.200.json
+
+###
+
+GET http://localhost:8080/beers
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-25T155011.200.json
+
+###
+
+PUT http://localhost:8080/beer/4
+Content-Type: application/json
+Content-Length: 255
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+    "brewery_id": 1,
+    "name": "Magic Ale",
+    "cat_id": 2,
+    "style_id": 3,
+    "abv": 9.5,
+    "ibu": 20.0,
+    "srm": 6.0,
+    "upc": 0,
+    "filepath": "",
+    "descript": "",
+    "add_user": 0,
+    "last_mod": "2023-10-30T12:00:00.000+00:00"
+}
+
+<> 2023-11-25T154957.200.json
+
+###
+
+GET http://localhost:8080/beers
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-25T154824.200.json
+
+###
+
+PUT http://localhost:8080/beer/4
+Content-Type: application/json
+Content-Length: 255
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+    "brewery_id": 1,
+    "name": "Magic Ale",
+    "cat_id": 2,
+    "style_id": 3,
+    "abv": 9.5,
+    "ibu": 20.0,
+    "srm": 6.0,
+    "upc": 0,
+    "filepath": "",
+    "descript": "",
+    "add_user": 0,
+    "last_mod": "2023-10-30T12:00:00.000+00:00"
+}
+
+<> 2023-11-25T154811.404.json
+
+###
+
+PUT http://localhost:8080/beer/6000
+Content-Type: application/json
+Content-Length: 255
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+    "brewery_id": 1,
+    "name": "Magic Ale",
+    "cat_id": 2,
+    "style_id": 3,
+    "abv": 9.5,
+    "ibu": 20.0,
+    "srm": 6.0,
+    "upc": 0,
+    "filepath": "",
+    "descript": "",
+    "add_user": 0,
+    "last_mod": "2023-10-30T12:00:00.000+00:00"
+}
+
+<> 2023-11-25T154804.404.json
+
+###
+
+PUT http://localhost:8080/beer/4
+Content-Type: application/json
+Content-Length: 255
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+    "brewery_id": 1,
+    "name": "Magic Ale",
+    "cat_id": 2,
+    "style_id": 3,
+    "abv": 9.5,
+    "ibu": 20.0,
+    "srm": 6.0,
+    "upc": 0,
+    "filepath": "",
+    "descript": "",
+    "add_user": 0,
+    "last_mod": "2023-10-30T12:00:00.000+00:00"
+}
+
+<> 2023-11-25T154745.404.json
+
+###
+
+PUT http://localhost:8080/beer/4
+Content-Type: application/json
+Content-Length: 255
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+    "brewery_id": 1,
+    "name": "Magic Ale",
+    "cat_id": 2,
+    "style_id": 3,
+    "abv": 9.5,
+    "ibu": 22.0,
+    "srm": 6.0,
+    "upc": 0,
+    "filepath": "",
+    "descript": "",
+    "add_user": 0,
+    "last_mod": "2023-10-30T12:00:00.000+00:00"
+}
+
+<> 2023-11-25T141828.200.json
+
+###
+
+PUT http://localhost:8080/beer/6000
+Content-Type: application/json
+Content-Length: 255
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+    "brewery_id": 1,
+    "name": "Magic Ale",
+    "cat_id": 2,
+    "style_id": 3,
+    "abv": 9.5,
+    "ibu": 20.0,
+    "srm": 6.0,
+    "upc": 0,
+    "filepath": "",
+    "descript": "",
+    "add_user": 0,
+    "last_mod": "2023-10-30T12:00:00.000+00:00"
+}
+
+<> 2023-11-25T141752.404.json
+
+###
+
+PUT http://localhost:8080/beer/4
+Content-Type: application/json
+Content-Length: 255
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+    "brewery_id": 1,
+    "name": "Magic Ale",
+    "cat_id": 2,
+    "style_id": 3,
+    "abv": 9.5,
+    "ibu": 20.0,
+    "srm": 6.0,
+    "upc": 0,
+    "filepath": "",
+    "descript": "",
+    "add_user": 0,
+    "last_mod": "2023-10-30T12:00:00.000+00:00"
+}
+
+<> 2023-11-25T141723.200.json
+
+###
+
+POST http://localhost:8080/beer
+Content-Type: application/json
+Content-Length: 371
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+    "brewery_id": 2,
+    "name": "Lager del Mar",
+    "cat_id": 2,
+    "style_id": 2,
+    "abv": 4.5,
+    "ibu": 20.0,
+    "srm": 10.0,
+    "upc": 987654321,
+    "filepath": "",
+    "descript": "Una cerveza de tipo lager con un toque marino, refrescante y ligera, perfecta para los días de verano.",
+    "add_user": 2,
+    "last_mod": "2023-11-30T12:00:00.000+00:00"
+}
+
+<> 2023-11-25T141712.201.json
+
+###
+
+POST http://localhost:8080/beer
+Content-Type: application/json
+Content-Length: 376
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+    "brewery_id": 40000,
+    "name": "Ale",
+    "cat_id": 20000,
+    "style_id": 20000,
+    "abv": 4.5,
+    "ibu": 20.0,
+    "srm": 10.0,
+    "upc": 987654321,
+    "filepath": "",
+    "descript": "Una cerveza de tipo lager con un toque marino, refrescante y ligera, perfecta para los días de verano.",
+    "add_user": 2000,
+    "last_mod": "2023-11-30T12:00:00.000+00:00"
+}
+
+<> 2023-11-25T141706.400.txt
+
+###
+
+DELETE http://localhost:8080/beer/30
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:8080/style/5789
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:8080/style/4
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-25T141331-1.200.json
+
+###
+
+GET http://localhost:8080/styles
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-25T141331.200.json
+
+###
+
+GET http://localhost:8080/category/7890
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:8080/category/6
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-25T141330-5.200.json
+
+###
+
+GET http://localhost:8080/categories
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-25T141330-4.200.json
+
+###
+
+GET http://localhost:8080/brewery/5000
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:8080/brewery/4
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-25T141330-3.200.json
+
+###
+
+GET http://localhost:8080/breweries
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-25T141330-2.200.json
+
+###
+
+PUT http://localhost:8080/beer/6000
+Content-Type: application/json
+Content-Length: 255
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+    "brewery_id": 1,
+    "name": "Magic Ale",
+    "cat_id": 2,
+    "style_id": 3,
+    "abv": 9.5,
+    "ibu": 20.0,
+    "srm": 6.0,
+    "upc": 0,
+    "filepath": "",
+    "descript": "",
+    "add_user": 0,
+    "last_mod": "2023-10-30T12:00:00.000+00:00"
+}
+
+<> 2023-11-25T141330-1.404.json
+
+###
+
+PUT http://localhost:8080/beer/4
+Content-Type: application/json
+Content-Length: 255
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+    "brewery_id": 1,
+    "name": "Magic Ale",
+    "cat_id": 2,
+    "style_id": 3,
+    "abv": 9.5,
+    "ibu": 20.0,
+    "srm": 6.0,
+    "upc": 0,
+    "filepath": "",
+    "descript": "",
+    "add_user": 0,
+    "last_mod": "2023-10-30T12:00:00.000+00:00"
+}
+
+<> 2023-11-25T141330-1.200.json
+
+###
+
+DELETE http://localhost:8080/beer/8000
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+DELETE http://localhost:8080/beer/9
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:8080/beer/200000
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-25T141330.404.json
+
+###
+
